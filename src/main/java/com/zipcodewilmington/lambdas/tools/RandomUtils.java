@@ -17,7 +17,7 @@ public abstract class RandomUtils {
 
     /** @return a random character between the specified min and max character range */
     public static Character createCharacter(char min, char max) {
-        return (char) createInteger((int) min, (int) min).intValue();
+        return (char) createInteger((int) min, (int) max).intValue();
     }
 
     /** @return a random double between the specified min and max numeric range */
