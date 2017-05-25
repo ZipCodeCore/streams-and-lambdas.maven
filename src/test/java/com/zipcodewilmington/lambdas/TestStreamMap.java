@@ -5,8 +5,7 @@ import org.junit.Test;
 /**
  * Created by leon on 5/24/17.
  */
-public class
-TestMapSyntax {
+public class TestStreamMap {
     @Test
     public void test() {
 

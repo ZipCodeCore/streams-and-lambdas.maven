@@ -10,14 +10,14 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/2/17.
  */
-public class LambdaFilter {
+public class StreamFilter {
     private final Stream<Person> personStream;
     public final String startingCharacter;
 
     /**
      * No arg constructor
      */
-    public LambdaFilter() {
+    public StreamFilter() {
         this(PersonFactory.createPersonStream(100), 'A');
     }
 
@@ -25,7 +25,7 @@ public class LambdaFilter {
      * @param people - Array of person objects
      * @param startingCharacter - character to filter by
      */
-    public LambdaFilter(Person[] people, Character startingCharacter) {
+    public StreamFilter(Person[] people, Character startingCharacter) {
         this(Stream.of(people), startingCharacter);
     }
 
@@ -33,7 +33,7 @@ public class LambdaFilter {
      * @param people - List of person objects
      * @param startingCharacter - character to filter by
      */
-    public LambdaFilter(List<Person> people, Character startingCharacter) {
+    public StreamFilter(List<Person> people, Character startingCharacter) {
         this(people.stream(), startingCharacter);
     }
 
@@ -42,7 +42,7 @@ public class LambdaFilter {
      * @param people - Stream of person objects
      * @param startingCharacter - character to filter by
      */
-    public LambdaFilter(Stream<Person> people, Character startingCharacter) {
+    public StreamFilter(Stream<Person> people, Character startingCharacter) {
         this.personStream = people;
         this.startingCharacter = startingCharacter.toString();
     }

@@ -1,7 +1,15 @@
 package com.zipcodewilmington.lambdas;
 
-/**
- * Created by leon on 5/24/17.
- */
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+@RunWith(Suite.class)
+
+@Suite.SuiteClasses({
+        TestStreamFilter.class,
+        TestStreamMap.class,
+        TestPersonFactory.class
+})
+
 public class TestSuiteFullRegression {
 }

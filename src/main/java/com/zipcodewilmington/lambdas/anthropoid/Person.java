@@ -1,4 +1,4 @@
-package com.zipcodewilmington.lambdas.tools.anthropoid;
+package com.zipcodewilmington.lambdas.anthropoid;
 
 import java.util.Date;
 
@@ -11,6 +11,7 @@ public class Person {
     public final PersonProperty<Boolean> isMale;
     public final PersonProperty<Long> personalId;
     public final PersonProperty<Date> birthDate;
+    public final PersonProperty<String[]> aliases;
 
     /**
      * @param name - name of person
@@ -19,12 +20,13 @@ public class Person {
      * @param personalId - unique id
      * @param birthDate - date of birth
      */
-    public Person(String name, int age, boolean isMale, long personalId, Date birthDate) {
+    public Person(String name, int age, boolean isMale, long personalId, Date birthDate, String... aliases) {
         this.name = new PersonProperty<>(name);
         this.age = new PersonProperty<>(age);
         this.isMale = new PersonProperty<>(isMale);
         this.personalId = new PersonProperty<>(personalId);
         this.birthDate = new PersonProperty<>(birthDate);
+        this.aliases = new PersonProperty<>(aliases);
     }
 
     /** the purpose of this class is compress verbose getter and setter logic

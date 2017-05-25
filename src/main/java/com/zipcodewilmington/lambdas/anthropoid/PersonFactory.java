@@ -1,9 +1,8 @@
-package com.zipcodewilmington.lambdas.tools.anthropoid;
+package com.zipcodewilmington.lambdas.anthropoid;
 
 import com.zipcodewilmington.lambdas.tools.RandomUtils;
 import com.zipcodewilmington.lambdas.tools.StringUtils;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,18 +11,24 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/1/17.
  */
-public class PersonFactory {
+public final class PersonFactory {
+    private PersonFactory() {
+        /** this class is not to be instantiated */
+    }
+
     /**
      * @return a new instance of a person with randomized fields
      */
     public static Person createRandomPerson() {
         String name = StringUtils.capitalizeFirstChar(RandomUtils.createString('a', 'z', 10));
+        String[] aliases = RandomUtils.createStrings('a', 'z', 10, 100);
         int age = RandomUtils.createInteger(0, 99);
-        boolean isMale = RandomUtils.chance(50);
+        boolean isMale = RandomUtils.createBoolean(50);
         long personalId = System.nanoTime();
         Date birthDate = RandomUtils.createDate(1950, 2010);
 
-        Person randomPerson = new Person(name, age, isMale, personalId, birthDate);
+
+        Person randomPerson = new Person(name, age, isMale, personalId, birthDate, aliases);
         return randomPerson;
     }
 

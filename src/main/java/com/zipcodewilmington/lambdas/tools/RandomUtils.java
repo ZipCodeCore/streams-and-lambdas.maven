@@ -1,4 +1,4 @@
-package com.zipcode.tools;
+package com.zipcodewilmington.lambdas.tools;
 
 import java.awt.*;
 import java.util.*;
@@ -11,7 +11,7 @@ public abstract class RandomUtils {
     private static final Random random = new Random();
 
     /** @return true with the likelihood of specified percentage */
-    public static boolean chance(float percentage) {
+    public static boolean createBoolean(float percentage) {
         return percentage > createFloat(0, 100);
     }
 
@@ -41,12 +41,21 @@ public abstract class RandomUtils {
     }
 
     /** @return a random string of the specified length containing characters in the specified range */
-    public static String createString(char min, char max, int length) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < length; i++) {
+    public static String createString(char min, char max, int stringLength) {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < stringLength; i++) {
             sb.append(createCharacter(min, max));
         }
         return sb.toString();
+    }
+
+    /** @return an array of random string objects of the specified length containing characters in the specified range */
+    public static String[] createStrings(char min, char max, int stringLength, int stringCount) {
+        String[] strings = new String[stringCount];
+        for(int i=0;i<strings.length;i++) {
+            strings[i] = createString(min,max,stringLength);
+        }
+        return strings;
     }
 
     /** @return a random date object ranging between the specified dates */
@@ -64,9 +73,9 @@ public abstract class RandomUtils {
 
     /** @return specified string value with random upper and lower casing assigned to each character */
     public static String shuffleCasing(String str) {
-        StringBuilder sb = new StringBuilder();
+        StringBuffer sb = new StringBuffer();
         for (String s : str.toLowerCase().split("")) {
-            sb.append(chance(50) ? s.toUpperCase() : s.toLowerCase());
+            sb.append(createBoolean(50) ? s.toUpperCase() : s.toLowerCase());
         }
         return sb.toString();
     }
