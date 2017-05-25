@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 
 /**
  * Created by leon on 5/1/17.
+ * @ATTENTION_TO_STUDENTS You are FORBIDDEN from using loops of any sort within the definition of this class.
  */
 public final class PersonFactory {
     private PersonFactory() {
@@ -35,7 +36,7 @@ public final class PersonFactory {
     /**
      * @param personCount - number of Person objects to create
      * @return - ArrayList of Person objects
-     */
+     */ // TODO
     public static List<Person> createPersonList(int personCount) {
         return createPersonStream(personCount).collect(Collectors.toList());
     }
@@ -44,7 +45,7 @@ public final class PersonFactory {
     /**
      * @param personCount - number of Person objects to create
      * @return - Array of Person objects
-     */
+     */ // TODO
     public static Person[] createPersonArray(int personCount) {
         return createPersonStream(personCount).toArray(Person[]::new);
     }
@@ -53,7 +54,7 @@ public final class PersonFactory {
     /**
      * @param personCount - number of Person objects to create
      * @return - Stream representation of collection of Person objects
-     */
+     */ // TODO
     public static Stream<Person> createPersonStream(int personCount) {
         return Stream.generate(PersonFactory::createRandomPerson).limit(personCount);
     }

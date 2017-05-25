@@ -21,7 +21,7 @@ public class StringUtils {
     /**
      * @param numberOfRepeats - number of times to repeat this string
      * @param val - value of string to repeat
-     * @return - `val` concatenated with itself `numberOfRepeats` times
+     * @return - `people` concatenated with itself `numberOfRepeats` times
      */
     public static String repeatString(int numberOfRepeats, String val) {
         StringBuffer sb = new StringBuffer();

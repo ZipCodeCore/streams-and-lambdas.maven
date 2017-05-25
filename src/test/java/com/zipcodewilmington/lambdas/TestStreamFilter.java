@@ -11,31 +11,31 @@ import java.util.List;
  * Created by leon on 5/2/17.
  */
 public class TestStreamFilter {
-    private StreamFilter streamFilter;
+    private StreamFilter lambdaFilter;
 
     @Before
     public void setup() {
-        streamFilter = new StreamFilter();
+        lambdaFilter = new StreamFilter();
     }
 
     @Test
     public void testToListMultiLine() {
-        testFilter(streamFilter.toListMultiLine());
+        testFilter(lambdaFilter.toListMultiLine());
     }
 
     @Test
     public void testToListOneLine() {
-        testFilter(streamFilter.toListOneLine());
+        testFilter(lambdaFilter.toListOneLine());
     }
 
     @Test
     public void testToArrayMultiLine() {
-        testFilter(streamFilter.toArrayMultiLine());
+        testFilter(lambdaFilter.toArrayMultiLine());
     }
 
     @Test
     public void testToArrayOneLine() {
-        testFilter(streamFilter.toArrayOneLine());
+        testFilter(lambdaFilter.toArrayOneLine());
     }
 
 
@@ -47,7 +47,7 @@ public class TestStreamFilter {
 
     private void testFilter(List<Person> persons) {
         for (Person p : persons) {
-            assert (p.name.getValue().startsWith(streamFilter.startingCharacter));
+            assert (p.name.getValue().startsWith(lambdaFilter.startingCharacter));
         }
     }
 }
