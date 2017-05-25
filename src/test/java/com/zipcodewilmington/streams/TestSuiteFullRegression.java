@@ -1,6 +1,7 @@
 package com.zipcodewilmington.streams;
 
-import com.zipcodewilmington.streams.exercises.TestSuiteConversionRegression;
+import com.zipcodewilmington.streams.anthropoid.TestPersonFactory;
+import com.zipcodewilmington.streams.conversions.TestSuiteConversionRegression;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
