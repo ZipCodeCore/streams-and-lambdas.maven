@@ -1,7 +1,7 @@
-package com.zipcodewilmington.lambdas.anthropoid;
+package com.zipcodewilmington.streams.anthropoid;
 
-import com.zipcodewilmington.lambdas.tools.RandomUtils;
-import com.zipcodewilmington.lambdas.tools.StringUtils;
+import com.zipcodewilmington.streams.tools.RandomUtils;
+import com.zipcodewilmington.streams.tools.StringUtils;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.zipcodewilmington.lambdas.anthropoid;
+package com.zipcodewilmington.streams.anthropoid;
 
 import java.util.Date;
 

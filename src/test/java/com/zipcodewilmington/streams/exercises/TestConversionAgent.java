@@ -1,6 +1,6 @@
-package com.zipcodewilmington.lambdas.exercises;
+package com.zipcodewilmington.streams.exercises;
 
-import com.zipcodewilmington.lambdas.anthropoid.Person;
+import com.zipcodewilmington.streams.anthropoid.Person;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

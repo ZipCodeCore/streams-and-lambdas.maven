@@ -1,19 +1,17 @@
-package com.zipcodewilmington.lambdas.exercises;
+package com.zipcodewilmington.streams.exercises;
 
-import com.zipcodewilmington.lambdas.anthropoid.Person;
-import com.zipcodewilmington.lambdas.anthropoid.PersonFactory;
+import com.zipcodewilmington.streams.anthropoid.Person;
+import com.zipcodewilmington.streams.anthropoid.PersonFactory;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.lang.System.out;
-
 /**
  * Created by leon on 5/25/17.
  */
 public final class StreamConverter extends ConversionAgent<Stream<Person>> {
-    List<Person> personList;
+    private final List<Person> personList;
     public StreamConverter(Stream<Person> people) {
         super(people);
         this.personList = super.people.collect(Collectors.toList());

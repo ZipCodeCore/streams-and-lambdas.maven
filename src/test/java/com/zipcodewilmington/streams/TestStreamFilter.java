@@ -1,6 +1,6 @@
-package com.zipcodewilmington.lambdas;
+package com.zipcodewilmington.streams;
 
-import com.zipcodewilmington.lambdas.anthropoid.Person;
+import com.zipcodewilmington.streams.anthropoid.Person;
 import org.junit.Before;
 import org.junit.Test;
 

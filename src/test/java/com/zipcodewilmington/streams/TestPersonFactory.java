@@ -1,8 +1,8 @@
-package com.zipcodewilmington.lambdas;
+package com.zipcodewilmington.streams;
 
-import com.zipcodewilmington.lambdas.tools.ReflectionUtils;
-import com.zipcodewilmington.lambdas.anthropoid.Person;
-import com.zipcodewilmington.lambdas.anthropoid.PersonFactory;
+import com.zipcodewilmington.streams.tools.ReflectionUtils;
+import com.zipcodewilmington.streams.anthropoid.Person;
+import com.zipcodewilmington.streams.anthropoid.PersonFactory;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/24/17.
  */
-public class TestPersonFactory {
+public class TestPersonFactory implements TestConstants{
     int collectionSize = 1000;
 
     @Test

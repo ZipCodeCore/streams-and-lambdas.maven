@@ -1,4 +1,6 @@
-package com.zipcodewilmington.lambdas.exercises;
+package com.zipcodewilmington.streams.exercises;
+
+import com.zipcodewilmington.streams.TestConstants;
 
 /**
  * Created by leon on 5/25/17.

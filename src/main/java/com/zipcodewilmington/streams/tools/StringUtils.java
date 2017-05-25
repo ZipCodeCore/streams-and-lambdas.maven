@@ -1,8 +1,4 @@
-package com.zipcodewilmington.lambdas.tools;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Stream;
+package com.zipcodewilmington.streams.tools;
 
 /**
  * Created by leon on 5/24/17.

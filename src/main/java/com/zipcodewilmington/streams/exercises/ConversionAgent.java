@@ -1,6 +1,6 @@
-package com.zipcodewilmington.lambdas.exercises;
+package com.zipcodewilmington.streams.exercises;
 
-import com.zipcodewilmington.lambdas.anthropoid.Person;
+import com.zipcodewilmington.streams.anthropoid.Person;
 
 import java.util.List;
 import java.util.function.Function;

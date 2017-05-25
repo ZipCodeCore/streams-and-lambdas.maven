@@ -1,8 +1,5 @@
-package com.zipcodewilmington.lambdas.exercises;
+package com.zipcodewilmington.streams.exercises;
 
-import com.zipcodewilmington.lambdas.TestPersonFactory;
-import com.zipcodewilmington.lambdas.TestStreamFilter;
-import com.zipcodewilmington.lambdas.TestStreamMap;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

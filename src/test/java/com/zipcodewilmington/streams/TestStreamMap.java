@@ -1,4 +1,4 @@
-package com.zipcodewilmington.lambdas;
+package com.zipcodewilmington.streams;
 
 import org.junit.Test;
 
