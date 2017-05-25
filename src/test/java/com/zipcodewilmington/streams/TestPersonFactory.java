@@ -14,8 +14,7 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/24/17.
  */
-public class TestPersonFactory implements TestConstants{
-    int collectionSize = 1000;
+public class TestPersonFactory implements TestConstants {
 
     @Test
     public void testCreateRandomPersonList() {
