@@ -6,6 +6,7 @@ import java.util.Iterator;
 
 /**
  * Created by leon on 5/19/17.
+ * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
 public class ReflectionUtils {
     public static HashMap<Field, String> getFieldMap(Object object) {
@@ -19,9 +20,9 @@ public class ReflectionUtils {
                     Entry pair = (Entry) it.next();
                     sb
                             .append("\n" + StringUtils.repeatString(150, "-"))
-                            .append(String.format("\nEntry number:\t\t%s", i))
-                            .append(String.format("\nKey:\t\t\t\t%s", pair.getKey()))
-                            .append(String.format("\nValue:\t\t\t\t%s", pair.getValue()));
+                            .append(String.format("\nEntry number: %s", StringUtils.padLeft(i, 30)))
+                            .append(String.format("\nKey: %s", StringUtils.padLeft(pair.getKey(), 30)))
+                            .append(String.format("\nValue: %s", StringUtils.padLeft(pair.getValue(), 30)));
                     it.remove(); // prevents ConcurrentModificationException
                 }
                 return sb.toString();

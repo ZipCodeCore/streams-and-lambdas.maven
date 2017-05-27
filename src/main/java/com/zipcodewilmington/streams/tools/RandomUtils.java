@@ -5,10 +5,14 @@ import java.util.*;
 
 /**
  * Created by Leon on 2/4/2017.
+ * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
-
-public abstract class RandomUtils {
+public final class RandomUtils {
     private static final Random random = new Random();
+
+    private RandomUtils() {
+        /** This class is uninstantiable */
+    }
 
     /** @return true with the likelihood of specified percentage */
     public static boolean createBoolean(float percentage) {

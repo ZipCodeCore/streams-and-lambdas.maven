@@ -4,6 +4,7 @@ import java.util.Date;
 
 /**
  * Created by leon on 5/1/17.
+ * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
 public class Person {
     public final PersonProperty<String> name;
@@ -29,7 +30,7 @@ public class Person {
         this.aliases = new PersonProperty<>(aliases);
     }
 
-    /** the purpose of this class is compress verbose getter and setter logic
+    /** the purpose of this class is to compress verbose getter and setter logic
      * @param <E> the type of data to store */
     public class PersonProperty<E> {
         private E val; // value of the data
@@ -39,9 +40,14 @@ public class Person {
             this.val = val;
         }
 
-        /** @return value this object is storing*/
+        /** @return value this object is storing */
         public E getValue() {
             return val;
+        }
+
+        /** set value this object is storing */
+        public void setValue(E val) {
+            this.val = val;
         }
     }
 }

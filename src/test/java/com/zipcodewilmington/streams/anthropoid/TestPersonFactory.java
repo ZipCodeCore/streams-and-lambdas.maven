@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 
 /**
  * Created by leon on 5/24/17.
+ * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
 public class TestPersonFactory implements TestConstants {
 
@@ -47,6 +48,7 @@ public class TestPersonFactory implements TestConstants {
         String messageCheckValue = "Ensuring field-value is non-null";
 
         HashMap<Field, String> fieldMap = ReflectionUtils.getFieldMap(person);
+        System.out.println(fieldMap.toString());
         for (Map.Entry<Field, String> entry : fieldMap.entrySet()) {
             Field key = entry.getKey();
             String value = entry.getValue();

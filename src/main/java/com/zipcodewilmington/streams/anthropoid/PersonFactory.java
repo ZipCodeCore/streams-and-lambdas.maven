@@ -18,7 +18,7 @@ public final class PersonFactory {
     }
 
     /**
-     * @return a new instance of a person with randomized fields
+     * @return a new instance of a person with fields of random values
      */
     public static Person createRandomPerson() {
         String name = StringUtils.capitalizeFirstChar(RandomUtils.createString('a', 'z', 10));

@@ -11,5 +11,8 @@ import org.junit.runners.Suite;
         TestConverterStream.class
 })
 
+/**
+ * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
+ */
 public class TestSuiteConversionRegression {
 }

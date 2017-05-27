@@ -8,9 +8,9 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 /**
- * @author leon hunter
  * Created by leon on 5/25/17.
  * ConversionAgent is responsible for conversion between different collection types
+ * for the sake of this assignment and my sanity, consider primitive arrays to be collection type
  */
 public abstract class ConversionAgent<T> {
     protected T people;
