@@ -44,8 +44,8 @@ public class TestConversionAgent<T extends ConversionAgent> {
     @Test
     public void testToList() {
         for (int i = 0; i < personList.size(); i++) {
-            long listId = personList.get(i).personalId.getValue();
-            long arrayId = personArray[i].personalId.getValue();
+            long listId = personList.get(i).getPersonalId();
+            long arrayId = personArray[i].getPersonalId();
 
             Assert.assertEquals(listId, arrayId);
         }
@@ -57,8 +57,8 @@ public class TestConversionAgent<T extends ConversionAgent> {
         List<Person> people = personStream.collect(Collectors.toList());
 
         for (int i = 0; i < people.size(); i++) {
-            long arrayId = personArray[i].personalId.getValue();
-            long streamId = people.get(i).personalId.getValue();
+            long arrayId = personArray[i].getPersonalId();
+            long streamId = people.get(i).getPersonalId();
 
             Assert.assertEquals(streamId, arrayId);
         }
@@ -67,8 +67,8 @@ public class TestConversionAgent<T extends ConversionAgent> {
     @Test
     public void testToArray() {
         for (int i = 0; i < personArray.length; i++) {
-            long arrayId = personArray[i].personalId.getValue();
-            long listId = personList.get(i).personalId.getValue();
+            long arrayId = personArray[i].getPersonalId();
+            long listId = personList.get(i).getPersonalId();
 
             Assert.assertEquals(listId, arrayId);
         }

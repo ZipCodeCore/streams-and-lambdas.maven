@@ -32,7 +32,7 @@ public class ReflectionUtils {
             try {
                 boolean defaultAccess = f.isAccessible();
 
-                // attempt to modify visibility
+                // attempt to modify field visibility
                 f.setAccessible(true);
                 hm.put(f, f.get(object).toString());
                 f.setAccessible(defaultAccess);

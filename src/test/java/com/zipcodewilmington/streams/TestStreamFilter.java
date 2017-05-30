@@ -1,6 +1,9 @@
 package com.zipcodewilmington.streams;
 
 import com.zipcodewilmington.streams.anthropoid.Person;
+import com.zipcodewilmington.streams.tools.StringUtils;
+import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
+import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -47,8 +50,9 @@ public class TestStreamFilter {
     }
 
     private void testFilter(List<Person> persons) {
+        assert(persons.size() > 0);
         for (Person p : persons) {
-            assert (p.name.getValue().startsWith(streamFilter.startingCharacter));
+            assert (StringUtils.isPalindromeIgnoreCase(p.getName()));
         }
     }
 }

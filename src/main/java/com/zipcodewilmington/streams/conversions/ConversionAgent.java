@@ -6,17 +6,16 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
-
 /**
  * Created by leon on 5/25/17.
- * ConversionAgent is responsible for conversion between different collection types
- * for the sake of this assignment and my sanity, consider primitive arrays to be collection type
+ * ConversionAgent is responsible for conversion between different object sequent data types
+ * Object sequent data types include: collections, arrays, lists, maps, iterators
  */
 public abstract class ConversionAgent<T> {
     protected T people;
 
-    public ConversionAgent(T val) {
-        this.people = val;
+    public ConversionAgent(T objectSequence) {
+        this.people = objectSequence;
     }
 
     abstract public List<Person> toList();

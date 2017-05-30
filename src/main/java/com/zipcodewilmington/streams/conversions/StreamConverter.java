@@ -30,7 +30,7 @@ public final class StreamConverter extends ConversionAgent<Stream<Person>> {
 
     // TODO
     public Stream<Person> toStream() {
-        return this.personList.stream();
+        return this.personList.parallelStream();
     }
 
     // TODO

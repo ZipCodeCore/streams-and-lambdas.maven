@@ -21,8 +21,8 @@ public final class PersonFactory {
      * @return a new instance of a person with fields of random values
      */
     public static Person createRandomPerson() {
-        String name = StringUtils.capitalizeFirstChar(RandomUtils.createString('a', 'z', 10));
-        String[] aliases = RandomUtils.createStrings('a', 'z', 10, 100);
+        String name = StringUtils.capitalizeFirstChar(RandomUtils.createString('a', 'z', 3));
+        String[] aliases = RandomUtils.createStrings('a', 'z', 5, 5);
         int age = RandomUtils.createInteger(0, 99);
         boolean isMale = RandomUtils.createBoolean(50);
         long personalId = System.nanoTime();
@@ -30,6 +30,7 @@ public final class PersonFactory {
 
 
         Person randomPerson = new Person(name, age, isMale, personalId, birthDate, aliases);
+        PersonWarehouse.addPerson(randomPerson);
         return randomPerson;
     }
 

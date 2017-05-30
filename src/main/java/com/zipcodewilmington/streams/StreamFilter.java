@@ -3,6 +3,7 @@ package com.zipcodewilmington.streams;
 import com.zipcodewilmington.streams.anthropoid.Person;
 import com.zipcodewilmington.streams.anthropoid.PersonFactory;
 import com.zipcodewilmington.streams.tools.RandomUtils;
+import com.zipcodewilmington.streams.tools.StringUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +20,7 @@ public class StreamFilter {
      * No arg constructor
      */ //TODO - construct person stream of 100 person objects; startingCharacter is a random capital letter
     public StreamFilter() {
-        this(PersonFactory.createPersonStream(100), RandomUtils.createCharacter('A', 'Z'));
+        this(PersonFactory.createPersonStream(999), RandomUtils.createCharacter('A', 'Z'));
     }
 
     /**
@@ -35,7 +36,7 @@ public class StreamFilter {
      * @param startingCharacter - character to filter by
      */ //TODO
     public StreamFilter(List<Person> people, Character startingCharacter) {
-        this(people.stream(), startingCharacter);
+        this(people.parallelStream(), startingCharacter);
     }
 
 
@@ -54,7 +55,7 @@ public class StreamFilter {
      * @return a list of person object whose name starts with `this.startingCharacter`
      */ //TODO
     public List<Person> toListMultiLine() {
-        Stream<Person> personStreamFiltered = personStream.filter(person -> person.name.getValue().startsWith(startingCharacter));
+        Stream<Person> personStreamFiltered = personStream.filter(person -> StringUtils.isPalindromeIgnoreCase(person.getName()));
         List list = personStreamFiltered.collect(Collectors.toList());
         return list;
     }
@@ -66,7 +67,7 @@ public class StreamFilter {
      */ //TODO
     public List<Person> toListOneLine() {
         return personStream
-                .filter(person -> person.name.getValue().startsWith(startingCharacter))
+                .filter(person -> StringUtils.isPalindromeIgnoreCase(person.getName()))
                 .collect(Collectors.toList());
     }
 
@@ -77,7 +78,7 @@ public class StreamFilter {
      */ //TODO
     public Person[] toArrayOneLine() {
         return personStream
-                .filter(person -> person.name.getValue().startsWith(startingCharacter))
+                .filter(person -> StringUtils.isPalindromeIgnoreCase(person.getName()))
                 .toArray(Person[]::new); // method reference
     }
 
@@ -87,7 +88,7 @@ public class StreamFilter {
      * @return an array of person object whose name starts with `this.startingCharacter`
      */ //TODO
     public Person[] toArrayMultiLine() {
-        Stream<Person> personStreamFiltered = personStream.filter(person -> person.name.getValue().startsWith(startingCharacter));
+        Stream<Person> personStreamFiltered = personStream.filter(person -> StringUtils.isPalindromeIgnoreCase(person.getName()));
         Person[] personArray = personStreamFiltered.toArray(Person[]::new); // method reference
         return personArray;
     }

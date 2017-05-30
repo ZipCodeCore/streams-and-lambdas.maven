@@ -43,6 +43,10 @@ public class StringUtils {
      * @return the padded-left String
      */
     public static String padRight(String s, int n) {
-        return String.format("%1$-" + n + "s", s);
+        return padLeft(s, -n);
+    }
+
+    public static boolean isPalindromeIgnoreCase(String str) {
+        return new StringBuilder(str).reverse().toString().equalsIgnoreCase(str);
     }
 }

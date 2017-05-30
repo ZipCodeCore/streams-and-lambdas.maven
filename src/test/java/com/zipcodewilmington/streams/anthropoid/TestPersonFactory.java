@@ -33,12 +33,13 @@ public class TestPersonFactory implements TestConstants {
         checkStream(PersonFactory.createPersonStream(collectionSize));
     }
 
+    //8.1 - 8.6; 8.7 - rest
     private final void checkStream(Stream<Person> personStream) {
         String messageCheckSize = "Ensuring appropriately sized stream was produced.";
 
         Person[] personArray = personStream.toArray(Person[]::new);
         Assert.assertEquals(messageCheckSize, collectionSize, personArray.length);
-        for (Person person : personArray) { // TODO - Move to a `TestPerson` class
+        for (Person person : personArray) {
            checkPerson(person);
         }
     }
@@ -48,7 +49,6 @@ public class TestPersonFactory implements TestConstants {
         String messageCheckValue = "Ensuring field-value is non-null";
 
         HashMap<Field, String> fieldMap = ReflectionUtils.getFieldMap(person);
-        System.out.println(fieldMap.toString());
         for (Map.Entry<Field, String> entry : fieldMap.entrySet()) {
             Field key = entry.getKey();
             String value = entry.getValue();
