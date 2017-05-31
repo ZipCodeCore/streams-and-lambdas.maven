@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 /**
  * Created by leon on 5/15/17.
+ * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
 public class LoggerWarehouse {
     public static final LoggerHandler globalLogger = new LoggerHandler(Logger.getGlobal());
