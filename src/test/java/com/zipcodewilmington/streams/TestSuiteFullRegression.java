@@ -10,7 +10,6 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({
         TestStreamFilter.class,
-        TestStreamMap.class,
         TestSuiteAnthropoidRegression.class,
         TestSuiteConversionRegression.class
 })
