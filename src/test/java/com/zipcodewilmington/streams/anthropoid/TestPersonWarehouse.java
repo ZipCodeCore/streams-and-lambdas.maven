@@ -47,8 +47,8 @@ public class TestPersonWarehouse {
 
     @Test
     public void testGetFirstNUniquelyNamedPeople() {
-        int expectedSize = RandomUtils.createInteger(1, 2);
-        int actualSize = PersonWarehouse.getFirstNUniquelyNamedPeople(expectedSize).collect(Collectors.toList()).size();
+        int expectedSize = RandomUtils.createInteger(1, 3);
+        int actualSize = (int)PersonWarehouse.getFirstNUniquelyNamedPeople(expectedSize).count();
         Assert.assertTrue(expectedSize > actualSize);
     }
 

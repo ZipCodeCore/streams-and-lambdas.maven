@@ -1,19 +1,19 @@
-May 31, 2017 3:56:30 PM com.zipcodewilmington.streams.tools.logging.LoggerHandler log
+May 31, 2017 3:59:25 PM com.zipcodewilmington.streams.tools.logging.LoggerHandler log
 INFO: Registering a new person object to the person warehouse...
-May 31, 2017 3:56:30 PM com.zipcodewilmington.streams.tools.logging.LoggerHandler log
+May 31, 2017 3:59:25 PM com.zipcodewilmington.streams.tools.logging.LoggerHandler log
 INFO: 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Entry number:                              0
 Key: public final java.lang.String com.zipcodewilmington.streams.anthropoid.Person.name
-Value:                           Eqom
+Value:                           Vyhb
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Entry number:                              1
 Key: public final java.util.Date com.zipcodewilmington.streams.anthropoid.Person.birthDate
-Value:   Wed Apr 06 15:56:30 EST 1983
+Value:   Fri Nov 05 15:59:25 EST 1993
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Entry number:                              2
 Key: public final int com.zipcodewilmington.streams.anthropoid.Person.age
-Value:                             34
+Value:                             23
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Entry number:                              3
 Key: public final boolean com.zipcodewilmington.streams.anthropoid.Person.isMale
@@ -21,8 +21,8 @@ Value:                          false
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Entry number:                              4
 Key: public final long com.zipcodewilmington.streams.anthropoid.Person.personalId
-Value:                745398755630572
+Value:                745573729624334
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Entry number:                              5
 Key: public final java.lang.String[] com.zipcodewilmington.streams.anthropoid.Person.aliases
-Value:   [Ljava.lang.String;@16b4a017
+Value:   [Ljava.lang.String;@3ada9e37
