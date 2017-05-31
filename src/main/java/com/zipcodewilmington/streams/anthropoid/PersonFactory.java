@@ -21,7 +21,7 @@ public final class PersonFactory {
      * @return a new instance of a person with fields of random values
      */
     public static Person createRandomPerson() {
-        String name = StringUtils.capitalizeFirstChar(RandomUtils.createString('a', 'z', 3));
+        String name = StringUtils.capitalizeFirstChar(RandomUtils.createString('a', 'z', 4));
         String[] aliases = RandomUtils.createStrings('a', 'z', 5, 5);
         int age = RandomUtils.createInteger(0, 99);
         boolean isMale = RandomUtils.createBoolean(50);

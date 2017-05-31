@@ -16,9 +16,9 @@ import java.util.stream.Stream;
  *
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from using loops of any sort within the definition of this class.
  */
-public class PersonWarehouse {
+public final class PersonWarehouse {
     private static final LoggerHandler loggerHandler = LoggerWarehouse.getLogger(PersonWarehouse.class);
-    private static ArrayList<Person> people = new ArrayList<>();
+    private static final ArrayList<Person> people = new ArrayList<>();
 
     public static void addPerson(Person person) {
         loggerHandler.disbalePrinting();
@@ -31,9 +31,10 @@ public class PersonWarehouse {
      * @return list of uniquely named Person objects
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeople() {
-        List<String> names = people.parallelStream().map(p -> p.getName()).collect(Collectors.toList());
+        List<String> names = people.parallelStream().map(p -> p.getName()).distinct().collect(Collectors.toList());
         return people.parallelStream().filter(person -> !names.contains(person.getName()));
     }
+
 
     /**
      * @param character starting character of Person objects' name
@@ -45,7 +46,7 @@ public class PersonWarehouse {
     }
 
     /**
-     * @param n starting character of Person objects' name
+     * @param n first `n` Person objects
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getFirstNUniquelyNamedPeople(int n) {
@@ -75,4 +76,19 @@ public class PersonWarehouse {
     public static Stream<String> getAllAliases() {
         return people.parallelStream().flatMap(person -> Stream.of(person.getAliases()));
     }
+
+    /**
+     * @return list of names of Person objects
+     */ // TODO
+    public static List<String> getNames() {
+        return people.parallelStream().map(p -> p.getName()).collect(Collectors.toList());
+    }
+
+    /**
+     * @return ArrayList of all Person objects in this warehouse
+     */
+    public static ArrayList<Person> getPeople() {
+        return people;
+    }
+
 }
