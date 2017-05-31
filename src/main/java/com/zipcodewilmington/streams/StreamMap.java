@@ -13,11 +13,12 @@ import java.util.stream.Stream;
  */
 public class StreamMap {
     /**
+     * Section 8.3
      * @param someWord - word to convert to Stream<String>
      * @return - a Stream of single characters
      */ //TODO
     public static Stream<String> letters(String someWord) {
-        return Stream.of(someWord.split(""));
+        return null;
     }
 
     /**
@@ -25,7 +26,7 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO
     public static Stream<Stream<String>> wordsMap(String... someWords) {
-        return Stream.of(someWords).map(w -> letters(w));
+        return null;
     }
 
     /**
@@ -33,8 +34,6 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO
     public static Stream<String> wordsFlatMap(String... stringArray) {
-        Stream<String> wordStream = Stream.of(stringArray);
-        List<String> wordList = wordStream.collect(Collectors.toList());
-        return wordList.stream().flatMap(w -> letters(w));
+        return null;
     }
 }

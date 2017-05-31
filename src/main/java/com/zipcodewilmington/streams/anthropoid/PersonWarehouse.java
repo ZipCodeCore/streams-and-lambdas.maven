@@ -35,8 +35,7 @@ public final class PersonWarehouse {
      * @return list of uniquely named Person objects
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeople() {
-        List<String> names = people.parallelStream().map(p -> p.getName()).distinct().collect(Collectors.toList());
-        return people.parallelStream().filter(person -> !names.contains(person.getName()));
+        return null;
     }
 
 
@@ -45,8 +44,7 @@ public final class PersonWarehouse {
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return getUniquelyNamedPeople().filter(
-                person -> person.getName().startsWith(character.toString()));
+        return null;
     }
 
     /**
@@ -54,15 +52,14 @@ public final class PersonWarehouse {
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return getUniquelyNamedPeople().limit(n);
+        return null;
     }
 
     /**
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public static Map<Long, String> getIdToNameMap() {
-        return people.parallelStream().collect(
-                Collectors.toMap(p -> p.getPersonalId(), p -> p.getName()));
+        return null;
     }
 
 
@@ -70,7 +67,7 @@ public final class PersonWarehouse {
      * @return Stream of Stream of Aliases
      */ // TODO
     public static Stream<Stream<String>> getNestedAliases() {
-        return people.parallelStream().map(person -> Stream.of(person.getAliases()));
+        return null;
     }
 
 
@@ -78,14 +75,14 @@ public final class PersonWarehouse {
      * @return Stream of all Aliases
      */ // TODO
     public static Stream<String> getAllAliases() {
-        return people.parallelStream().flatMap(person -> Stream.of(person.getAliases()));
+        return null;
     }
 
     /**
      * @return list of names of Person objects
      */ // TODO
     public static List<String> getNames() {
-        return people.parallelStream().map(p -> p.getName()).collect(Collectors.toList());
+        return null;
     }
 
     /**
