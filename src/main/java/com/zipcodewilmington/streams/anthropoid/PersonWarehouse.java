@@ -5,6 +5,7 @@ import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -12,6 +13,7 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/29/17.
  * The warehouse is responsible for storing, retrieving, and filtering personSequence
+ *
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from using loops of any sort within the definition of this class.
  */
 public class PersonWarehouse {
@@ -29,9 +31,8 @@ public class PersonWarehouse {
      * @return list of uniquely named Person objects
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeople() {
-        ArrayList<String> names = new ArrayList<>();
-        return people.parallelStream().filter(
-                person -> !names.contains(person.getName()));
+        List<String> names = people.parallelStream().map(p -> p.getName()).collect(Collectors.toList());
+        return people.parallelStream().filter(person -> !names.contains(person.getName()));
     }
 
     /**

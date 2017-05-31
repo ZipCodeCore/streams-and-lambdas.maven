@@ -13,7 +13,7 @@ import java.util.stream.Stream;
  * Created by leon on 5/25/17.
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
-public class TestConversionAgent<T extends ConversionAgent> {
+public class TestConversionAgent<T extends PersonConversionAgent<Person>> {
     private final T conversionAgent;
 
     private List<Person> personList;
