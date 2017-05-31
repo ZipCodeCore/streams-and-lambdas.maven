@@ -20,6 +20,10 @@ public final class PersonWarehouse {
     private static final LoggerHandler loggerHandler = LoggerWarehouse.getLogger(PersonWarehouse.class);
     private static final ArrayList<Person> people = new ArrayList<>();
 
+    /**
+     * @param person the Person object to add to the warehouse
+     * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this method
+     */
     public static void addPerson(Person person) {
         loggerHandler.disbalePrinting();
         loggerHandler.info("Registering a new person object to the person warehouse...");
