@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/25/17.
  */
-public final class ArrayConverter extends ConversionAgent<Person[]> {
+public final class ArrayConverter extends PersonConversionAgent<Person[]> {
     public ArrayConverter(Person... people) {
         super(people);
     }
@@ -33,6 +33,6 @@ public final class ArrayConverter extends ConversionAgent<Person[]> {
 
     @Override
     public Person[] toArray() {
-        return this.personSequence;
+        return super.objectSequence;
     }
 }

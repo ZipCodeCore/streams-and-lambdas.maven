@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/25/17.
  */
-public final class ListConverter extends ConversionAgent<List<Person>> {
+public final class ListConverter extends PersonConversionAgent<List<Person>> {
     public ListConverter(List<Person> people) {
         super(people);
     }
@@ -22,7 +22,7 @@ public final class ListConverter extends ConversionAgent<List<Person>> {
 
     @Override
     public List<Person> toList() {
-        return this.personSequence;
+        return super.objectSequence;
     }
 
     //TODO

@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/29/17.
  * The warehouse is responsible for storing, retrieving, and filtering personSequence
+ * @ATTENTION_TO_STUDENTS You are FORBIDDEN from using loops of any sort within the definition of this class.
  */
 public class PersonWarehouse {
     private static final LoggerHandler loggerHandler = LoggerWarehouse.getLogger(PersonWarehouse.class);

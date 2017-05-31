@@ -10,11 +10,11 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/25/17.
  */
-public final class StreamConverter extends ConversionAgent<Stream<Person>> {
+public final class StreamConverter extends PersonConversionAgent<Stream<Person>> {
     private final List<Person> personList;
     public StreamConverter(Stream<Person> people) {
         super(people);
-        this.personList = super.personSequence.collect(Collectors.toList());
+        this.personList = super.objectSequence.collect(Collectors.toList());
     }
 
     public StreamConverter(int collectionSize) {
