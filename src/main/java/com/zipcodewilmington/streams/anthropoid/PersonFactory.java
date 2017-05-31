@@ -28,13 +28,13 @@ public final class PersonFactory {
         long personalId = System.nanoTime();
         Date birthDate = RandomUtils.createDate(1950, 2010);
 
-
         Person randomPerson = new Person(name, age, isMale, personalId, birthDate, aliases);
         PersonWarehouse.addPerson(randomPerson);
         return randomPerson;
     }
 
     /**
+     * Section 8.8
      * @param personCount - number of Person objects to create
      * @return - ArrayList of Person objects
      */ // TODO
@@ -53,6 +53,7 @@ public final class PersonFactory {
 
 
     /**
+     * Section 8.2
      * @param personCount - number of Person objects to create
      * @return - Stream representation of collection of Person objects
      */ // TODO

@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 /**
  * Created by leon on 5/29/17.
- * The warehouse is responsible for storing, retrieving, and filtering people
+ * The warehouse is responsible for storing, retrieving, and filtering personSequence
  */
 public class PersonWarehouse {
     private static final LoggerHandler loggerHandler = LoggerWarehouse.getLogger(PersonWarehouse.class);
@@ -56,5 +56,21 @@ public class PersonWarehouse {
     public static Map<Long, String> getIdToNameMap() {
         return people.parallelStream().collect(
                 Collectors.toMap(p -> p.getPersonalId(), p -> p.getName()));
+    }
+
+
+    /**
+     * @return Stream of Stream of Aliases
+     */ // TODO
+    public static Stream<Stream<String>> getNestedAliases() {
+        return people.parallelStream().map(person -> Stream.of(person.getAliases()));
+    }
+
+
+    /**
+     * @return Stream of all Aliases
+     */ // TODO
+    public static Stream<String> getAllAliases() {
+        return people.parallelStream().flatMap(person -> Stream.of(person.getAliases()));
     }
 }

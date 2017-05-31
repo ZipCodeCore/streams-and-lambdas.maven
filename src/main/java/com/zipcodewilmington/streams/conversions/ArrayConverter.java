@@ -33,6 +33,6 @@ public final class ArrayConverter extends ConversionAgent<Person[]> {
 
     @Override
     public Person[] toArray() {
-        return this.people;
+        return this.personSequence;
     }
 }

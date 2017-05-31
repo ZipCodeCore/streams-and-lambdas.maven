@@ -22,7 +22,7 @@ public final class ListConverter extends ConversionAgent<List<Person>> {
 
     @Override
     public List<Person> toList() {
-        return this.people;
+        return this.personSequence;
     }
 
     //TODO

@@ -17,7 +17,7 @@ public class StringUtils {
     /**
      * @param numberOfRepeats - number of times to repeat this string
      * @param val             - value of string to repeat
-     * @return - `people` concatenated with itself `numberOfRepeats` times
+     * @return - `personSequence` concatenated with itself `numberOfRepeats` times
      */
     public static String repeatString(int numberOfRepeats, String val) {
         StringBuffer sb = new StringBuffer();
@@ -46,6 +46,10 @@ public class StringUtils {
         return padLeft(s, -n);
     }
 
+    /**
+     * @param str string to check
+     * @return true if `str` is a palindrome
+     */
     public static boolean isPalindromeIgnoreCase(String str) {
         return new StringBuilder(str).reverse().toString().equalsIgnoreCase(str);
     }

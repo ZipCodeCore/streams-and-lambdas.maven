@@ -17,13 +17,7 @@ public class Person {
     public final long personalId;
     public final Date birthDate;
     public final String[] aliases;
-    /**
-     * @param name - name of person
-     * @param age - age of person
-     * @param isMale - gender flag
-     * @param personalId - unique id
-     * @param birthDate - date of birth
-     */
+
     Person(String name, int age, boolean isMale, long personalId, Date birthDate, String... aliases) {
         this.name = name;
         this.isMale = isMale;

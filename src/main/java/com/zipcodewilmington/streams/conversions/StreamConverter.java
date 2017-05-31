@@ -14,7 +14,7 @@ public final class StreamConverter extends ConversionAgent<Stream<Person>> {
     private final List<Person> personList;
     public StreamConverter(Stream<Person> people) {
         super(people);
-        this.personList = super.people.collect(Collectors.toList());
+        this.personList = super.personSequence.collect(Collectors.toList());
     }
 
     public StreamConverter(int collectionSize) {
