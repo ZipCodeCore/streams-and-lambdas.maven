@@ -1,7 +1,7 @@
 # ZCW-MicroLabs-Streams-And-Lambdas:<br>The Person Factory
 * **Purpose** - to demonstrate stream usage.
 
-# Part 1
+## Part 1
 * **Note** - The `Person` class is a representation of a respective `Person` object.
 * **Objective** - to implement the following classes:
 	* `PersonFactory` - generates `Person` objects.
@@ -9,7 +9,7 @@
 	* `StreamFilter` - demonstrates filtering and converting between collection-types
 	* `StreamMap` - demonstrates mapping and flatmapping
 
-# Part 2
+## Part 2
 * **Objective** - to implement the following classes:
 	* `ArrayConverter` - demonstrates the conversion from `SomeType[]` to
 		* list representation: `List<SomeType>`
