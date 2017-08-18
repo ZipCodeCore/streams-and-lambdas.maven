@@ -1,4 +1,5 @@
 # ZCW-MicroLabs-Streams-And-Lambdas:<br>The Person Factory
+* **Lab Author** - Leon Hunter
 * **Purpose** - to demonstrate stream usage.
 
 ## Part 1
