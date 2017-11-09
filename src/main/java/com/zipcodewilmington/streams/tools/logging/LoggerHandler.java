@@ -71,7 +71,7 @@ public final class LoggerHandler {
         this.printingEnabled = true;
     }
 
-    public void disbalePrinting() {
+    public void disablePrinting() {
         this.printingEnabled = false;
     }
 

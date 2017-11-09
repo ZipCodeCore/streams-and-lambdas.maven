@@ -7,8 +7,8 @@ import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 /**
  * Created by leon on 5/29/17.
@@ -25,7 +25,7 @@ public final class PersonWarehouse {
      * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this method
      */
     public static void addPerson(Person person) {
-        loggerHandler.disbalePrinting();
+        loggerHandler.disablePrinting();
         loggerHandler.info("Registering a new person object to the person warehouse...");
         loggerHandler.info(ReflectionUtils.getFieldMap(person).toString());
         people.add(person);
@@ -35,7 +35,14 @@ public final class PersonWarehouse {
      * @return list of uniquely named Person objects
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeople() {
-        return null;
+        return ( people.stream().collect(
+                                        Collectors.toMap(
+                                                        Person::getName,//Our key for this map is the Person's name.
+                                                                            //Keys must be unique identifiers
+                                                        p->p,           //Our value is the Person instance itself.
+                                                        (p,q) ->p)      //If two values have the same key, choose the
+                                                                            //first encountered
+                                        ).values().stream() );          //Get the values from the map and stream them
     }
 
 
@@ -44,7 +51,7 @@ public final class PersonWarehouse {
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+        return (getUniquelyNamedPeople().filter(p -> p.name.charAt(0)==character));
     }
 
     /**
@@ -52,14 +59,14 @@ public final class PersonWarehouse {
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return (getUniquelyNamedPeople().limit(n));
     }
 
     /**
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public static Map<Long, String> getIdToNameMap() {
-        return null;
+        return (getUniquelyNamedPeople().collect(Collectors.toMap(Person::getPersonalId, Person::getName)));
     }
 
 
@@ -67,7 +74,10 @@ public final class PersonWarehouse {
      * @return Stream of Stream of Aliases
      */ // TODO
     public static Stream<Stream<String>> getNestedAliases() {
-        return null;
+
+        Stream < Stream<String> > streamOfStreamStrings = Stream.of(people.stream().flatMap(Person::getAliases).distinct());
+
+        return streamOfStreamStrings;
     }
 
 
@@ -75,7 +85,12 @@ public final class PersonWarehouse {
      * @return Stream of all Aliases
      */ // TODO
     public static Stream<String> getAllAliases() {
+
+//        Stream<Person> p = people.stream().filter(u -> u.getAliases().length>0);
+//        Stream<String> s = p.map(o->o.getAliases());//(o -> o.getAliases());
+//        return (s);
         return null;
+        //
     }
 
     /**
