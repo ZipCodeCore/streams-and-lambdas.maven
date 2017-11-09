@@ -14,10 +14,11 @@ import java.util.stream.Collectors;
  */
 public class TestPersonWarehouse {
 
+
     @Before
     public void setup() {
         PersonWarehouse.getPeople().clear();
-        PersonFactory.createPersonStream(999);
+        PersonFactory.createPersonStream(999).collect(Collectors.toList());
     }
 
     @Test
