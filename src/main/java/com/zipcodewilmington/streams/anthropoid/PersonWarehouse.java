@@ -49,6 +49,7 @@ public final class PersonWarehouse {
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
+        //filters uniquelynamed people by the first character that was passed into method
         return getUniquelyNamedPeople().filter(
                 person -> person.getName().startsWith(character.toString()));
     }
