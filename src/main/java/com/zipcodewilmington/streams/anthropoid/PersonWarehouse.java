@@ -33,7 +33,7 @@ public final class PersonWarehouse {
      * @return list of uniquely named Person objects
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeople() {
-        return people.stream().collect(Collectors.toMap(Person::getName, person -> person, (person, person2)->person)).values().stream();
+        return people.stream().collect(Collectors.toMap(Person::getName, person -> person, (person, person2) -> person)).values().stream();
     }
 
     /**
@@ -57,7 +57,6 @@ public final class PersonWarehouse {
      */ // TODO
     public static Map<Long, String> getIdToNameMap() {
         return people.parallelStream().collect(Collectors.toMap(p -> p.getPersonalId(), p -> p.getName()));
-
         //this works but they want us to do it using the above way.
 //        Stream<Person> personStream = people.stream();
 //        Map<Long, String> myMap = new HashMap<>();
@@ -85,7 +84,7 @@ public final class PersonWarehouse {
      * @return list of names of Person objects
      */ // TODO
     public static List<String> getNames() {
-        return null;
+        return people.stream().map(Person::getName).collect(Collectors.toList());
     }
 
     /**
