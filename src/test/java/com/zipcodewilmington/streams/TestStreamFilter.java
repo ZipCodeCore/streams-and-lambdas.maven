@@ -42,7 +42,7 @@ public class TestStreamFilter {
         testFilter(streamFilter.toArrayOneLine());
     }
 
-
+    @Test
     private void testFilter(Person[] persons) {
         testFilter(Arrays.asList(persons));
     }
