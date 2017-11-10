@@ -39,7 +39,7 @@ public final class PersonFactory {
      * @return - ArrayList of Person objects
      */
     public static List<Person> createPersonList(int listSize) {
-        return Stream.generate(PersonFactory::createRandomPerson).limit(listSize).collect(Collectors.toList());
+        return createPersonStream(listSize).collect(Collectors.toList());
     }
 
 

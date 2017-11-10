@@ -54,7 +54,7 @@ public final class PersonWarehouse {
      */
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
         String startsWithChar = Character.toString(character);
-        return people.stream().distinct().filter(p -> (p.getName().startsWith(startsWithChar)));
+        return getUniquelyNamedPeople().filter(p -> (p.getName().startsWith(startsWithChar)));
     }
 
     /**

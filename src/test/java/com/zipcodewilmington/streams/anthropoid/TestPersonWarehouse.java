@@ -51,7 +51,7 @@ public class TestPersonWarehouse {
     public void testGetFirstNUniquelyNamedPeople() {
         int expectedSize = RandomUtils.createInteger(1, 3);
         int actualSize = (int)PersonWarehouse.getFirstNUniquelyNamedPeople(expectedSize).count();
-        Assert.assertTrue(expectedSize > actualSize);
+        Assert.assertTrue(expectedSize >= actualSize);
     }
 
     @Test
@@ -95,4 +95,5 @@ public class TestPersonWarehouse {
         }
         Assert.assertEquals(localNames.size(), warehouseNames.size());
     }
+
 }
