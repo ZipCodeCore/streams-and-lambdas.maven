@@ -4,9 +4,7 @@ import com.zipcodewilmington.streams.tools.ReflectionUtils;
 import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -35,16 +33,15 @@ public final class PersonWarehouse {
      * @return list of uniquely named Person objects
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeople() {
-        return null;
+        return people.stream().collect(Collectors.toMap(Person::getName, person -> person, (person, person2) -> person)).values().stream();
     }
-
 
     /**
      * @param character starting character of Person objects' name
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+        return getUniquelyNamedPeople().filter(x -> x.getName().substring(0, 1).equals(character));
     }
 
     /**
@@ -52,14 +49,19 @@ public final class PersonWarehouse {
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return getUniquelyNamedPeople().limit(n);
     }
 
     /**
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public static Map<Long, String> getIdToNameMap() {
-        return null;
+        return people.parallelStream().collect(Collectors.toMap(p -> p.getPersonalId(), p -> p.getName()));
+        //this works but they want us to do it using the above way.
+//        Stream<Person> personStream = people.stream();
+//        Map<Long, String> myMap = new HashMap<>();
+//        personStream.forEach(x -> myMap.put(x.getPersonalId(), x.getName()));
+//        return myMap;
     }
 
 
@@ -82,7 +84,7 @@ public final class PersonWarehouse {
      * @return list of names of Person objects
      */ // TODO
     public static List<String> getNames() {
-        return null;
+        return people.stream().map(Person::getName).collect(Collectors.toList());
     }
 
     /**
