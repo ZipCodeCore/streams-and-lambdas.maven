@@ -1,10 +1,12 @@
 package com.zipcodewilmington.streams.anthropoid;
 
+import com.zipcodewilmington.streams.conversions.StreamConverter;
 import com.zipcodewilmington.streams.tools.ReflectionUtils;
 import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -75,9 +77,7 @@ public final class PersonWarehouse {
      */ // TODO
     public static Stream<Stream<String>> getNestedAliases() {
 
-        Stream < Stream<String> > streamOfStreamStrings = Stream.of(people.stream().flatMap(Person::getAliases).distinct());
-
-        return streamOfStreamStrings;
+        return Stream.of(people.stream().flatMap(p->Arrays.stream(p.getAliases()).distinct()).distinct());
     }
 
 
@@ -86,18 +86,16 @@ public final class PersonWarehouse {
      */ // TODO
     public static Stream<String> getAllAliases() {
 
-//        Stream<Person> p = people.stream().filter(u -> u.getAliases().length>0);
-//        Stream<String> s = p.map(o->o.getAliases());//(o -> o.getAliases());
-//        return (s);
-        return null;
-        //
+        return getNestedAliases().findAny().get().distinct();
+
     }
 
     /**
      * @return list of names of Person objects
      */ // TODO
     public static List<String> getNames() {
-        return null;
+
+        return (  people.stream().map(Person::getName).collect(Collectors.toList()));
     }
 
     /**
