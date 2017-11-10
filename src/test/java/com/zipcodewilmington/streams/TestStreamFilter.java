@@ -48,8 +48,11 @@ public class TestStreamFilter {
     }
 
     private void testFilter(List<Person> persons) {
+        Person firstPerson = persons.get(0);
+        String startingCharacter = firstPerson.getName().substring(0,1);
         for (Person p : persons) {
-            assert (StringUtils.isPalindromeIgnoreCase(p.getName()));
+            String personName = p.getName();
+            assert (personName.startsWith(startingCharacter));
         }
     }
 }

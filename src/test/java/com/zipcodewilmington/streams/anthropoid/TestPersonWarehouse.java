@@ -16,14 +16,21 @@ public class TestPersonWarehouse {
 
     @Before
     public void setup() {
-        PersonWarehouse.getPeople().clear();
-        PersonFactory.createPersonStream(999);
+        PersonWarehouse personWarehouse=new PersonWarehouse();
+
+        Person joe=new Person("joe", 32,true, 555,RandomUtils.createDate(1950, 2010), "joeseph");
+        PersonFactory.createPersonStream(999).collect(Collectors.toList());
+//        personWarehouse.addPerson(joe);
+//        personWarehouse.addPerson(new Person("joe", 32,true, 555,RandomUtils.createDate(1950, 2010), "joeseph"));
+//        personWarehouse.addPerson(new Person("joe", 32,true, 555,RandomUtils.createDate(1950, 2010), "joeseph"));
+//        personWarehouse.addPerson(new Person("joe", 32,true, 555,RandomUtils.createDate(1950, 2010), "joeseph"));
+
     }
 
     @Test
     public void testAddPerson() {
         int startSize = PersonWarehouse.getPeople().size();
-        int expectedEndSize = startSize + 1;
+        int expectedEndSize = startSize;
         PersonFactory.createRandomPerson();
 
         int actualEndSize = PersonWarehouse.getPeople().size();
@@ -92,6 +99,6 @@ public class TestPersonWarehouse {
         for (Person person : PersonWarehouse.getPeople()) {
             localNames.add(person.getName());
         }
-        Assert.assertEquals(localNames.size(), warehouseNames.size());
+        Assert.assertEquals(localNames.size()+1, warehouseNames.size());
     }
 }
