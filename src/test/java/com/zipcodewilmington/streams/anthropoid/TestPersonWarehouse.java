@@ -17,20 +17,16 @@ public class TestPersonWarehouse {
     @Before
     public void setup() {
         PersonWarehouse.getPeople().clear();
-        PersonFactory.createPersonStream(999).collect(Collectors.toList());
+        PersonFactory.createPersonStream(999);
     }
 
     @Test
     public void testAddPerson() {
         int startSize = PersonWarehouse.getPeople().size();
-        System.out.println("Start Size of people: "+startSize);
         int expectedEndSize = startSize + 1;
-        System.out.println("Expected endSize: "+expectedEndSize);
         PersonFactory.createRandomPerson();
-        System.out.println("Create random person and add to list");
 
         int actualEndSize = PersonWarehouse.getPeople().size();
-        System.out.println("Actual end size: "+actualEndSize);
 
         Assert.assertEquals(expectedEndSize, actualEndSize);
     }
