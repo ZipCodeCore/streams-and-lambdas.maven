@@ -4,9 +4,8 @@ import com.zipcodewilmington.streams.tools.ReflectionUtils;
 import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -34,8 +33,14 @@ public final class PersonWarehouse {
     /**
      * @return list of uniquely named Person objects
      */ //TODO
+//    public static Stream<Person> getUniquelyNamedPeople() {
+//        List<String> names = people.stream().map(Person::getName).collect(Collectors.toList());
+//        return people.stream().filter(person -> names.contains(person.getName()));
+//    }
+
     public static Stream<Person> getUniquelyNamedPeople() {
-        return null;
+        Map<String, Person> map = people.stream().collect(Collectors.toMap(Person::getName, person1 -> person1, (a, b) -> a));
+        return map.values().stream();
     }
 
 
@@ -44,7 +49,7 @@ public final class PersonWarehouse {
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+        return getUniquelyNamedPeople().filter(person -> character.equals(person.getName().charAt(0)));
     }
 
     /**
@@ -52,22 +57,21 @@ public final class PersonWarehouse {
      * @return a Stream of respective
      */ //TODO
     public static Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return getUniquelyNamedPeople().limit(n);
     }
 
     /**
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public static Map<Long, String> getIdToNameMap() {
-        return null;
+        return people.parallelStream().collect(Collectors.toMap(Person::getPersonalId,Person::getName));
     }
-
 
     /**
      * @return Stream of Stream of Aliases
      */ // TODO
     public static Stream<Stream<String>> getNestedAliases() {
-        return null;
+        return people.stream().map(person -> Arrays.stream(person.getAliases()));
     }
 
 
@@ -75,14 +79,14 @@ public final class PersonWarehouse {
      * @return Stream of all Aliases
      */ // TODO
     public static Stream<String> getAllAliases() {
-        return null;
+        return people.stream().flatMap(person -> Arrays.stream(person.getAliases()));
     }
 
     /**
      * @return list of names of Person objects
      */ // TODO
     public static List<String> getNames() {
-        return null;
+        return people.stream().map(Person::getName).collect(Collectors.toList());
     }
 
     /**
