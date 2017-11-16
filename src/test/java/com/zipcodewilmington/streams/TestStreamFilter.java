@@ -1,9 +1,8 @@
 package com.zipcodewilmington.streams;
 
+import Mohammed.Abrar.tools.StreamFilter;
 import com.zipcodewilmington.streams.anthropoid.Person;
-import com.zipcodewilmington.streams.tools.StringUtils;
-import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
-import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
+import Mohammed.Abrar.tools.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 
