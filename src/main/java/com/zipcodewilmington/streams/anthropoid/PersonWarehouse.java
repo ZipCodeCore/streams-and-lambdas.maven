@@ -37,9 +37,9 @@ public final class PersonWarehouse {
      */ //TODO
     public static Stream<Person> getUniquelyNamedPeople() {
         //creates a list of names
-        //filters people array
-        List<String> names = people.parallelStream().map(p -> p.getName()).collect(Collectors.toList());
-        return people.parallelStream().filter(person -> !names.contains(person.getName()));
+        //filters people array by comparing it to new list
+        List<String> names = people.stream().map(p -> p.getName()).collect(Collectors.toList());
+        return people.stream().filter(person -> !names.contains(person.getName()));
 
     }
 
@@ -66,7 +66,7 @@ public final class PersonWarehouse {
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public static Map<Long, String> getIdToNameMap() {
-        return people.parallelStream().collect(
+        return people.stream().collect(
                 Collectors.toMap(p -> p.getPersonalId(), p -> p.getName()));
     }
 
