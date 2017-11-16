@@ -64,6 +64,7 @@ public final class PersonFactory {
      * @return - Stream representation of collection of Person objects
      */ // TODO
     public static Stream<Person> createPersonStream(int streamCount) {
-        return null;
+        Stream<Person> personStream = Stream.generate(PersonFactory::createRandomPerson).limit(streamCount);
+        return personStream;
     }
 }

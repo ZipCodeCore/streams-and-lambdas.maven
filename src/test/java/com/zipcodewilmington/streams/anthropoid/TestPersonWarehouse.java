@@ -17,7 +17,7 @@ public class TestPersonWarehouse {
     @Before
     public void setup() {
         PersonWarehouse.getPeople().clear();
-        PersonFactory.createPersonStream(999);
+        PersonFactory.createPersonStream(999).collect(Collectors.toList());
     }
 
     @Test
@@ -48,9 +48,9 @@ public class TestPersonWarehouse {
 
     @Test
     public void testGetFirstNUniquelyNamedPeople() {
-        int expectedSize = RandomUtils.createInteger(1, 3);
+        int expectedSize = RandomUtils.createInteger(1, 99);
         int actualSize = (int)PersonWarehouse.getFirstNUniquelyNamedPeople(expectedSize).count();
-        Assert.assertTrue(expectedSize > actualSize);
+        Assert.assertTrue(expectedSize >= actualSize);
     }
 
     @Test
