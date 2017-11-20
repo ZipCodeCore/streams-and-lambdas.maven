@@ -49,7 +49,7 @@ public class TestStreamFilter {
 
     private void testFilter(List<Person> persons) {
         for (Person p : persons) {
-            assert (StringUtils.isPalindromeIgnoreCase(p.getName()));
+            assert (streamFilter.startingCharacter.equals(p.getName().charAt(0)));
         }
     }
 }

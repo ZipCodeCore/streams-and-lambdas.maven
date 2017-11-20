@@ -1,8 +1,12 @@
 package com.zipcodewilmington.streams.anthropoid;
 
+import com.sun.xml.internal.ws.message.stream.StreamMessage;
 import com.zipcodewilmington.streams.tools.RandomUtils;
 import com.zipcodewilmington.streams.tools.StringUtils;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,7 +43,8 @@ public final class PersonFactory {
      * @return - ArrayList of Person objects
      */ // TODO
     public static List<Person> createPersonList(int listSize) {
-        return null;
+        //calls the method that generates a PersonStream and converts it to a LIST!
+        return createPersonStream(listSize).collect(Collectors.toList());
     }
 
 
@@ -48,7 +53,8 @@ public final class PersonFactory {
      * @return - Array of Person objects
      */ // TODO
     public static Person[] createPersonArray(int arrayLength) {
-        return null;
+        //Calls stream method and coverts to array with limited size
+        return createPersonStream(arrayLength).toArray(Person[]::new);
     }
 
 
@@ -58,6 +64,7 @@ public final class PersonFactory {
      * @return - Stream representation of collection of Person objects
      */ // TODO
     public static Stream<Person> createPersonStream(int streamCount) {
-        return null;
+        //Creates a stream of Person's using PersonFactory createRandomPerson method, limited by "streamcount".
+        return Stream.generate(PersonFactory::createRandomPerson).limit(streamCount);
     }
 }
