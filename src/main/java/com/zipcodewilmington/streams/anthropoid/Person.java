@@ -1,9 +1,8 @@
 package com.zipcodewilmington.streams.anthropoid;
 
-import com.zipcodewilmington.streams.tools.DateUtils;
+import Mohammed.Abrar.tools.DateUtils;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.Date;
 
 /**
@@ -16,7 +15,7 @@ public class Person {
     public final boolean isMale;
     public final long personalId;
     public final Date birthDate;
-    public final String[] aliases;
+    public String[] aliases;
 
     Person(String name, int age, boolean isMale, long personalId, Date birthDate, String... aliases) {
         this.name = name;
@@ -26,6 +25,7 @@ public class Person {
         this.age = DateUtils.yearsBetween(birthDate, LocalDate.now());
         this.aliases = aliases;
     }
+
 
     public String getName() {
         return name;
@@ -50,4 +50,5 @@ public class Person {
     public String[] getAliases() {
         return aliases;
     }
+
 }

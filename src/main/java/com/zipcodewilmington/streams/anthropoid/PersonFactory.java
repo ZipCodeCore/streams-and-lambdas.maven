@@ -1,8 +1,10 @@
 package com.zipcodewilmington.streams.anthropoid;
 
-import com.zipcodewilmington.streams.tools.RandomUtils;
-import com.zipcodewilmington.streams.tools.StringUtils;
+import Mohammed.Abrar.tools.RandomUtils;
+import Mohammed.Abrar.tools.StringUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,6 +15,9 @@ import java.util.stream.Stream;
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from using loops of any sort within the definition of this class.
  */
 public final class PersonFactory {
+
+    public static final PersonFactory INSTANCE = new PersonFactory();
+    private static List<Person>  personList;
     private PersonFactory() {
         /** this class is not to be instantiated */
     }
@@ -39,7 +44,9 @@ public final class PersonFactory {
      * @return - ArrayList of Person objects
      */ // TODO
     public static List<Person> createPersonList(int listSize) {
-        return null;
+        List<Person> personArrayList = Arrays.stream(createPersonArray(listSize)).collect(Collectors.toList());
+        return personArrayList;
+
     }
 
 
@@ -48,7 +55,9 @@ public final class PersonFactory {
      * @return - Array of Person objects
      */ // TODO
     public static Person[] createPersonArray(int arrayLength) {
-        return null;
+
+        Person[] personArray = createPersonStream(arrayLength).toArray(size -> new Person[size]);
+        return  personArray;
     }
 
 
@@ -58,6 +67,7 @@ public final class PersonFactory {
      * @return - Stream representation of collection of Person objects
      */ // TODO
     public static Stream<Person> createPersonStream(int streamCount) {
-        return null;
+
+      return  Stream.generate(PersonFactory::createRandomPerson).limit(streamCount);
     }
 }

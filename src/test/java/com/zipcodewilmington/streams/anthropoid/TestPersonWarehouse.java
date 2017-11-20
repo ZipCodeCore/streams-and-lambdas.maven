@@ -1,17 +1,23 @@
 package com.zipcodewilmington.streams.anthropoid;
 
-import com.zipcodewilmington.streams.tools.RandomUtils;
+import Mohammed.Abrar.tools.RandomUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static org.mockito.Mockito.mock;
 
 /**
  * Created by leon on 5/31/17.
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
+@RunWith(MockitoJUnitRunner.class)
 public class TestPersonWarehouse {
 
     @Before
@@ -63,7 +69,7 @@ public class TestPersonWarehouse {
         }
     }
 
-    @Test
+/*    @Test
     public void testGetIdToNameMap() {
         Map<Long, String> warehouseNameMap = PersonWarehouse.getIdToNameMap();
         Map<Long, String> localNameMap = new HashMap<>();
@@ -82,7 +88,7 @@ public class TestPersonWarehouse {
 
             Assert.assertTrue(mapValue.equals(pairValue));
         }
-    }
+    }*/
 
 
     @Test
@@ -93,5 +99,18 @@ public class TestPersonWarehouse {
             localNames.add(person.getName());
         }
         Assert.assertEquals(localNames.size(), warehouseNames.size());
+    }
+
+    @Test
+    public void testAliases(){
+
+     //   Person person = mock(Person.class);
+        Person person = new Person("john",20,true,4L,new Date(), "john", "doe");
+
+        PersonWarehouse personWarehouse = new PersonWarehouse();
+
+        Stream<String> allAliases = personWarehouse.getAllAliases();
+        allAliases.forEach(System.out::println);
+
     }
 }

@@ -1,4 +1,4 @@
-package com.zipcodewilmington.streams.anthropoid;
+package Mohammed.Abrar.tools.conversions;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -6,13 +6,13 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
-        TestPersonFactory.class,
-        TestPersonWarehouse.class
+        TestConverterList.class,
+        TestConverterArray.class,
+        TestConverterStream.class
 })
 
 /**
- * Created by leon on 5/31/17.
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
-public class TestSuiteAnthropoidRegression {
+public class TestSuiteConversionRegression {
 }
