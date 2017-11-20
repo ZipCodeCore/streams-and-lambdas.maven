@@ -1,5 +1,6 @@
 package Mohammed.Abrar.tools;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -24,7 +25,8 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO
     public static Stream<Stream<String>> wordsMap(String... someWords) {
-        return null;
+
+        return Stream.of(wordsFlatMap());
     }
 
     /**
@@ -32,6 +34,7 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO
     public static Stream<String> wordsFlatMap(String... stringArray) {
-        return null;
+
+        return Arrays.stream(stringArray);
     }
 }

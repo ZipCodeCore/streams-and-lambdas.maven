@@ -24,11 +24,13 @@ public final class ListConverter extends PersonConversionAgent<List<Person>> {
 
     @Override
     public List<Person> toList() {
+
         return super.objectSequence;
     }
 
     //TODO
     public Stream<Person> toStream() {
+
         return toList().stream();
     }
 
