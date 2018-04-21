@@ -7,10 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="looptest" />
+        <module name="streamdemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="looptest" target="1.8" />
+      <module name="streamdemo" target="10" />
     </bytecodeTargetLevel>
   </component>
 </project>
