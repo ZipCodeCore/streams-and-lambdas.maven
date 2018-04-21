@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30b7e4a0-b899-49c3-865c-0311dfadae62" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PersonWarehouse.leonlog" beforeDir="false" afterPath="$PROJECT_DIR$/target/PersonWarehouse.leonlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/StreamFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/StreamFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/StreamMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/StreamMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/anthropoid/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/anthropoid/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/anthropoid/PersonFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/anthropoid/PersonFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/anthropoid/PersonWarehouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/anthropoid/PersonWarehouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/ArrayConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/ArrayConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/ConversionAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/ConversionAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/ListConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/ListConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/PersonConversionAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/PersonConversionAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/StreamConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/conversions/StreamConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/DateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/DateUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/RandomUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/RandomUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/ReflectionUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/ReflectionUtils$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/ReflectionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/ReflectionUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/StringUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/logging/LoggerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/logging/LoggerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/logging/LoggerWarehouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zipcodewilmington/streams/tools/logging/LoggerWarehouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/global.leonlog" beforeDir="false" afterPath="$PROJECT_DIR$/target/global.leonlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/TestConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/TestConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/TestStreamFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/TestStreamFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/TestStreamMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/TestSuiteFullRegression.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/TestSuiteFullRegression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/anthropoid/TestPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/anthropoid/TestPerson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/anthropoid/TestPersonFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/anthropoid/TestPersonFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestConversionAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestConversionAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestConverterArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestConverterArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestConverterList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestConverterList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestConverterStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestConverterStream.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestSuiteConversionRegression.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zipcodewilmington/streams/conversions/TestSuiteConversionRegression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/StreamMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/StreamMap.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,125 +16,15 @@
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" openResultsInEditor="true" userTempatePath="" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestPersonWarehouse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/anthropoid/TestPersonWarehouse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-661">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StreamFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/StreamFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="82" column="10" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="10" />
-              <folding>
-                <element signature="e#1177#1178#0" expanded="true" />
-                <element signature="e#1219#1220#0" expanded="true" />
-                <element signature="e#1769#1770#0" expanded="true" />
-                <element signature="e#1796#1797#0" expanded="true" />
-                <element signature="e#1987#1988#0" expanded="true" />
-                <element signature="e#2014#2015#0" expanded="true" />
-                <element signature="e#2203#2204#0" expanded="true" />
-                <element signature="e#2230#2231#0" expanded="true" />
-                <element signature="e#2423#2424#0" expanded="true" />
-                <element signature="e#2450#2451#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestSuiteFullRegression.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/TestSuiteFullRegression.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/anthropoid/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/anthropoid/PersonFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestPersonFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/anthropoid/TestPersonFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-              <folding>
-                <element signature="e#975#976#0" expanded="true" />
-                <element signature="e#1052#1053#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StreamMap.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/StreamMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+            <state relative-caret-position="386">
+              <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
               <folding>
                 <element signature="e#550#551#0" expanded="true" />
-                <element signature="e#577#578#0" expanded="true" />
-                <element signature="e#802#803#0" expanded="true" />
-                <element signature="e#829#830#0" expanded="true" />
-                <element signature="e#1054#1055#0" expanded="true" />
-                <element signature="e#1081#1082#0" expanded="true" />
+                <element signature="e#583#584#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonWarehouse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/anthropoid/PersonWarehouse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
-              <folding>
-                <element signature="e#1420#1421#0" expanded="true" />
-                <element signature="e#1447#1448#0" expanded="true" />
-                <element signature="e#1668#1669#0" expanded="true" />
-                <element signature="e#1695#1696#0" expanded="true" />
-                <element signature="e#2044#2045#0" expanded="true" />
-                <element signature="e#2071#2072#0" expanded="true" />
-                <element signature="e#2202#2203#0" expanded="true" />
-                <element signature="e#2229#2230#0" expanded="true" />
-                <element signature="e#2343#2344#0" expanded="true" />
-                <element signature="e#2370#2371#0" expanded="true" />
-                <element signature="e#2486#2487#0" expanded="true" />
-                <element signature="e#2513#2514#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor />
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -257,9 +117,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/conversions/ArrayConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/conversions/ListConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/conversions/StreamConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/StreamMap.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/TestSuiteFullRegression.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/anthropoid/PersonFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/StreamMap.java" />
       </list>
     </option>
   </component>
@@ -296,6 +156,80 @@
             <path>
               <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
               <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="anthropoid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="conversions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CR-MicroLabs-Streams-And-Lambdas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -655,14 +589,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493756132542</updated>
-      <workItem from="1524323265493" duration="4176000" />
+      <workItem from="1524323265493" duration="7028000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestPersonWarehouse - 2017.05.31 at 15h 58m 34s.xml">
-      <configuration name="TestPersonWarehouse" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestPersonWarehouse - 2017.05.31 at 15h 59m 25s.xml">
       <configuration name="TestPersonWarehouse" configurationId="JUnit" />
     </history-entry>
@@ -690,9 +621,12 @@
     <history-entry file="TestPersonFactory - 2018.04.21 at 13h 35m 50s.xml">
       <configuration name="TestPersonFactory" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestPersonFactory - 2018.04.21 at 13h 44m 59s.xml">
+      <configuration name="TestPersonFactory" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4176000" />
+    <option name="totallyTimeSpent" value="7028000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -705,6 +639,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3277849" />
@@ -846,20 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/TestStreamFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/TestConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/conversions/TestConversionAgent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -899,13 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/anthropoid/TestSuiteAnthropoidRegression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
@@ -976,23 +890,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/TestStreamMap.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/TestSuiteFullRegression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/anthropoid/TestPersonWarehouse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-661">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/anthropoid/PersonWarehouse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1022,9 +919,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/anthropoid/TestPersonFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <folding>
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/anthropoid/TestSuiteAnthropoidRegression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/anthropoid/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="97">
           <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
@@ -1036,35 +954,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/util/stream/Stream.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/TestConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="1330" column="31" selection-start-line="1330" selection-start-column="31" selection-end-line="1330" selection-end-column="31" />
+        <state relative-caret-position="85">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/anthropoid/TestPersonFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/TestStreamFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        <state relative-caret-position="285">
+          <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
           <folding>
-            <element signature="e#975#976#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/TestSuiteFullRegression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zipcodewilmington/streams/anthropoid/TestPersonWarehouse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/util/stream/Stream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="1421" column="9" selection-start-line="1421" selection-start-column="9" selection-end-line="1421" selection-end-column="9" />
+          <folding>
+            <element signature="e#55066#55067#0" expanded="true" />
+            <element signature="e#55122#55123#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zipcodewilmington/streams/StreamMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        <state relative-caret-position="386">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
           <folding>
             <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
           </folding>
         </state>
       </provider>
