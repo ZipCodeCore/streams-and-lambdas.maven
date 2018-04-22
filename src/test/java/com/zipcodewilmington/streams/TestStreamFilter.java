@@ -2,8 +2,6 @@ package com.zipcodewilmington.streams;
 
 import com.zipcodewilmington.streams.anthropoid.Person;
 import com.zipcodewilmington.streams.tools.StringUtils;
-import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
-import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by leon on 5/2/17.
+ *
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
 public class TestStreamFilter {

@@ -1,8 +1,5 @@
 package com.zipcodewilmington.streams.anthropoid;
 
-import com.zipcodewilmington.streams.conversions.TestConverterArray;
-import com.zipcodewilmington.streams.conversions.TestConverterList;
-import com.zipcodewilmington.streams.conversions.TestConverterStream;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

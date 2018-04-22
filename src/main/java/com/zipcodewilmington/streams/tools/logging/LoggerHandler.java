@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.logging.*;
-import java.util.stream.Stream;
 
 import static java.util.logging.Level.*;
 
 /**
  * Created by leon on 5/15/17.
+ *
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
 public final class LoggerHandler {
@@ -57,7 +57,7 @@ public final class LoggerHandler {
     }
 
     private void log(Level level, String message, Object... messageArgs) {
-        if(printingEnabled) {
+        if (printingEnabled) {
             System.out.println(String.format(message, messageArgs));
         }
         logger.log(level, String.format(message, messageArgs));

@@ -12,6 +12,7 @@ import java.util.stream.Stream;
  */
 public final class StreamConverter extends PersonConversionAgent<Stream<Person>> {
     private final List<Person> personList;
+
     public StreamConverter(Stream<Person> people) {
         super(people);
         this.personList = super.objectSequence.collect(Collectors.toList());

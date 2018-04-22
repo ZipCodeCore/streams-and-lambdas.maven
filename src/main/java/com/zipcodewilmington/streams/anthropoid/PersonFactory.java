@@ -3,7 +3,6 @@ package com.zipcodewilmington.streams.anthropoid;
 import com.zipcodewilmington.streams.tools.RandomUtils;
 import com.zipcodewilmington.streams.tools.StringUtils;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,6 +10,7 @@ import java.util.stream.Stream;
 
 /**
  * Created by leon on 5/1/17.
+ *
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from using loops of any sort within the definition of this class.
  */
 public final class PersonFactory {
@@ -36,11 +36,12 @@ public final class PersonFactory {
 
     /**
      * Section 8.8
+     *
      * @param listSize - number of Person objects to create
      * @return - ArrayList of Person objects
      */
     public static List<Person> createPersonList(int listSize) {
-         return Stream.generate(PersonFactory::createRandomPerson).limit(listSize).collect(Collectors.toList());
+        return Stream.generate(PersonFactory::createRandomPerson).limit(listSize).collect(Collectors.toList());
     }
 
     /**
@@ -54,6 +55,7 @@ public final class PersonFactory {
 
     /**
      * Section 8.2
+     *
      * @param streamCount - number of Person objects to create
      * @return - Stream representation of collection of Person objects
      */

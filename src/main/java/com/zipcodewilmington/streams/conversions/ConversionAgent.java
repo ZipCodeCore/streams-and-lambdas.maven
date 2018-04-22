@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  * Object sequent data types include: collections, arrays, lists, maps, iterators
  *
  * @param <ObjectSequentDataType> some Object sequent data type
- * @param <TypeOfObjectSequence> Type of Object in the object sequence
+ * @param <TypeOfObjectSequence>  Type of Object in the object sequence
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
 
