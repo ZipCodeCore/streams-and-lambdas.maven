@@ -19,7 +19,7 @@ public class StreamFilter {
 
     /**
      * No arg constructor
-     */ //TODO - construct person stream of 100 person objects; startingCharacter is a random capital letter
+     */
     public StreamFilter() {
         this(PersonFactory.createPersonStream(100), RandomUtils.createCharacter('A', 'Z'));
     }
@@ -35,7 +35,7 @@ public class StreamFilter {
     /**
      * @param people - List of person objects
      * @param startingCharacter - character to filter by
-     */ //TODO
+     */
     public StreamFilter(List<Person> people, Character startingCharacter) {
         this(people.stream(), startingCharacter);
     }
@@ -54,36 +54,45 @@ public class StreamFilter {
     /**
      * Using multi-line lambda syntax
      * @return a list of person object whose name starts with `this.startingCharacter`
-     */ //TODO
+     */ // Is this what he means?
     public List<Person> toListMultiLine() {
-        return null;
+        return personStream.filter(p -> {
+           return p.getName().charAt(0) == startingCharacter.charAt(0);
+        }).collect(Collectors.toList());
     }
 
 
     /**
      * Using one-line lambda syntax
      * @return a list of person objects whose name starts with `this.startingCharacter`
-     */ //TODO
+     */
     public List<Person> toListOneLine() {
-        return null;
+        return personStream
+                .filter(p -> p.getName().charAt(0) == startingCharacter.charAt(0))
+                .collect(Collectors.toList());
     }
 
 
     /**
      * Using one-line lambda syntax
      * @return an array of person object whose name starts with `this.startingCharacter`
-     */ //TODO
+     */ //
     public Person[] toArrayOneLine() {
-        return null;
+        return personStream
+                .filter(p -> p.getName().charAt(0) == startingCharacter.charAt(0))
+                .toArray(Person[]::new);
     }
 
 
     /**
      * Using multi-line lambda syntax
      * @return an array of person object whose name starts with `this.startingCharacter`
-     */ //TODO
+     */ // again, not sure if this is what he means
     public Person[] toArrayMultiLine() {
-        return null;
+        return personStream
+                .filter(p -> {
+                    return p.getName().charAt(0) == startingCharacter.charAt(0);
+                }).toArray(Person[]::new);
     }
 
 }

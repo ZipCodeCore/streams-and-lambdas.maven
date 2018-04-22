@@ -83,7 +83,7 @@ public final class LoggerHandler {
         FileHandler fh = null;
         try {
             removeHandlers(); // enables better printing control
-            String fileName = String.format("./target/%s.leonlog", loggerName, System.nanoTime());
+            String fileName = String.format("./target/%1s.%2s.leonlog", loggerName, System.nanoTime());
             fh = new FileHandler(fileName);
             fh.setFormatter(formatter);
         } catch (IOException ioe) {
