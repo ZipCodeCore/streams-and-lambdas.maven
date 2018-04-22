@@ -7,6 +7,10 @@ import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -33,56 +37,63 @@ public final class PersonWarehouse {
 
     /**
      * @return list of uniquely named Person objects
-     */ //TODO
+     */
     public static Stream<Person> getUniquelyNamedPeople() {
-        return null;
+        return stream().filter(distinctByKey(Person::getName));
     }
 
+    /**
+     * All mother, are you awake?
+     */
+    private static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyEntityExtractor) {
+        Set<Object> seen = ConcurrentHashMap.newKeySet();
+        return t -> seen.add(keyEntityExtractor.apply(t));
+    }
 
     /**
      * @param character starting character of Person objects' name
      * @return a Stream of respective
-     */ //TODO
+     */ // if you insist this must be a char comparison, I wish you well during the trials to come.
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+        return getUniquelyNamedPeople().filter(p -> p.getName().charAt(0) == character);
     }
 
     /**
      * @param n first `n` Person objects
      * @return a Stream of respective
-     */ //TODO
+     */
     public static Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return getUniquelyNamedPeople().limit(n);
     }
 
     /**
      * @return a mapping of Person Id to the respective Person name
-     */ // TODO
+     */
     public static Map<Long, String> getIdToNameMap() {
-        return null;
+        return stream().collect(Collectors.toMap(Person::getPersonalId, Person::getName));
     }
 
 
     /**
      * @return Stream of Stream of Aliases
-     */ // TODO
+     */
     public static Stream<Stream<String>> getNestedAliases() {
-        return null;
+        return stream().map(p -> Stream.of(p.getAliases()));
     }
 
 
     /**
      * @return Stream of all Aliases
-     */ // TODO
+     */
     public static Stream<String> getAllAliases() {
-        return null;
+        return stream().flatMap(p -> Stream.of(p.getAliases()));
     }
 
     /**
      * @return list of names of Person objects
-     */ // TODO
+     */
     public static List<String> getNames() {
-        return null;
+        return stream().map(Person::getName).collect(Collectors.toList());
     }
 
     /**
@@ -92,4 +103,7 @@ public final class PersonWarehouse {
         return people;
     }
 
+    public static Stream<Person> stream() {
+        return people.stream();
+    }
 }

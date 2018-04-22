@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 /**
  * Created by leon on 5/31/17.
+ *
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
 public class TestPersonWarehouse {
@@ -49,7 +50,7 @@ public class TestPersonWarehouse {
     @Test
     public void testGetFirstNUniquelyNamedPeople() {
         int expectedSize = RandomUtils.createInteger(1, 3);
-        int actualSize = (int)PersonWarehouse.getFirstNUniquelyNamedPeople(expectedSize).count();
+        int actualSize = (int) PersonWarehouse.getFirstNUniquelyNamedPeople(expectedSize).count();
         Assert.assertTrue(expectedSize > actualSize);
     }
 
