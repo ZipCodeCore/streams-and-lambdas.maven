@@ -50,7 +50,7 @@ public final class PersonWarehouse {
     /**
      * @param character starting character of Person objects' name
      * @return a Stream of respective
-     */
+     */ // if you insist this must be a char comparison, I wish you well during the trials to come.
     public static Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
         return getUniquelyNamedPeople().filter(p -> p.getName().charAt(0) == character);
     }
@@ -58,7 +58,7 @@ public final class PersonWarehouse {
     /**
      * @param n first `n` Person objects
      * @return a Stream of respective
-     */ //TODO
+     */
     public static Stream<Person> getFirstNUniquelyNamedPeople(int n) {
         return getUniquelyNamedPeople().limit(n);
     }
@@ -73,7 +73,7 @@ public final class PersonWarehouse {
 
     /**
      * @return Stream of Stream of Aliases
-     */ // TODO: test
+     */
     public static Stream<Stream<String>> getNestedAliases() {
         return stream().map(p -> Stream.of(p.getAliases()));
     }
@@ -81,7 +81,7 @@ public final class PersonWarehouse {
 
     /**
      * @return Stream of all Aliases
-     */ // TODO: test
+     */
     public static Stream<String> getAllAliases() {
         return stream().flatMap(p -> Stream.of(p.getAliases()));
     }
