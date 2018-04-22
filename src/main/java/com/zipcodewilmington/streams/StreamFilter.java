@@ -39,7 +39,6 @@ public class StreamFilter {
         this(people.stream(), startingCharacter);
     }
 
-
     /**
      * @param people            - Stream of person objects
      * @param startingCharacter - character to filter by
@@ -48,7 +47,6 @@ public class StreamFilter {
         this.personStream = people;
         this.startingCharacter = startingCharacter.toString();
     }
-
 
     /**
      * Using multi-line lambda syntax
@@ -61,7 +59,6 @@ public class StreamFilter {
         }).collect(Collectors.toList());
     }
 
-
     /**
      * Using one-line lambda syntax
      *
@@ -72,7 +69,6 @@ public class StreamFilter {
                 .filter(p -> p.getName().charAt(0) == startingCharacter.charAt(0))
                 .collect(Collectors.toList());
     }
-
 
     /**
      * Using one-line lambda syntax
@@ -85,7 +81,6 @@ public class StreamFilter {
                 .toArray(Person[]::new);
     }
 
-
     /**
      * Using multi-line lambda syntax
      *
@@ -97,5 +92,4 @@ public class StreamFilter {
                     return p.getName().charAt(0) == startingCharacter.charAt(0);
                 }).toArray(Person[]::new);
     }
-
 }

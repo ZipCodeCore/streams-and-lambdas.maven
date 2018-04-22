@@ -50,4 +50,9 @@ public class Person {
     public String[] getAliases() {
         return aliases;
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }
