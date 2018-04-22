@@ -25,13 +25,11 @@ public final class ListConverter extends PersonConversionAgent<List<Person>> {
         return super.objectSequence;
     }
 
-    //TODO
     public Stream<Person> toStream() {
-        return null;
+        return super.objectSequence.stream();
     }
 
-    //TODO
     public Person[] toArray() {
-        return null;
+        return super.objectSequence.toArray(new Person[0]);
     }
 }
