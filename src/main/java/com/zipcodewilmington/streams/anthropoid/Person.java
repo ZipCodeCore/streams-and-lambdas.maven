@@ -54,7 +54,7 @@ public class Person implements Comparable<Person> {
     }
 
 
-    @Override
+    @Override // implemented for comparison purposes
     public String toString() {
         ObjectMapper mapper = new ObjectMapper();
         try {
@@ -64,7 +64,7 @@ public class Person implements Comparable<Person> {
         }
     }
 
-    @Override
+    @Override // implemented for sorting purposes
     public int compareTo(Person o) {
         return o.toString().compareTo(this.toString());
     }

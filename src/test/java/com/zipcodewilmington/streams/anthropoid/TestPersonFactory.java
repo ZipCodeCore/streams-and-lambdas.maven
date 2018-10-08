@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -67,10 +68,12 @@ public class TestPersonFactory implements TestConstants {
         // Given
 
         // When
-        Stream<Person> personStream = factory.createPersonStream(collectionSize);
+        List<Person> personStream = factory
+                .createPersonStream(collectionSize)
+                .collect(Collectors.toList()); // copying to list prevents IllegalStateException
 
         // Then
-        Assert.assertEquals(collectionSize, personStream.count());
+        Assert.assertEquals(collectionSize, personStream.size());
         personStream.forEach(this::ensurePersonHasNonNullFields);
     }
 
