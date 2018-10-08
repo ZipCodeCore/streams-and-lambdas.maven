@@ -18,7 +18,7 @@ public final class StreamConverter extends PersonConversionAgent<Stream<Person>>
     }
 
     public StreamConverter(int collectionSize) {
-        this(PersonFactory.createPersonStream(collectionSize));
+        this(new PersonFactory().createPersonStream(collectionSize));
         /** Implementation of adapter pattern for testing purposes
          *  @param collectionSize  - count of Stream to be generated */
     }

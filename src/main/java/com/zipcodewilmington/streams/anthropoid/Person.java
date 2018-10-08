@@ -1,24 +1,26 @@
 package com.zipcodewilmington.streams.anthropoid;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zipcodewilmington.streams.tools.DateUtils;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.Date;
 
 /**
  * Created by leon on 5/1/17.
+ *
  * @ATTENTION_TO_STUDENTS You are FORBIDDEN from modifying this class
  */
-public class Person {
-    public final String name;
-    public final int age;
-    public final boolean isMale;
-    public final long personalId;
-    public final Date birthDate;
-    public final String[] aliases;
+public class Person implements Comparable<Person> {
+    private String name;
+    private int age;
+    private boolean isMale;
+    private long personalId;
+    private Date birthDate;
+    private String[] aliases;
 
-    Person(String name, int age, boolean isMale, long personalId, Date birthDate, String... aliases) {
+    public Person(String name, Boolean isMale, Long personalId, Date birthDate, String... aliases) {
         this.name = name;
         this.isMale = isMale;
         this.personalId = personalId;
@@ -49,5 +51,21 @@ public class Person {
 
     public String[] getAliases() {
         return aliases;
+    }
+
+
+    @Override
+    public String toString() {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            return mapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            throw new Error(e);
+        }
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return o.toString().compareTo(this.toString());
     }
 }

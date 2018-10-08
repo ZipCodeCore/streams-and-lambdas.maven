@@ -15,7 +15,7 @@ public final class ListConverter extends PersonConversionAgent<List<Person>> {
     }
 
     public ListConverter(int collectionSize) {
-        this(PersonFactory.createPersonList(collectionSize));
+        this(new PersonFactory().createPersonList(collectionSize));
         /** Implementation of adapter pattern for testing purposes
          *  @param collectionSize  - size of List to be generated */
     }

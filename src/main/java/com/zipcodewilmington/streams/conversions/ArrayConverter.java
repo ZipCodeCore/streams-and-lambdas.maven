@@ -16,7 +16,7 @@ public final class ArrayConverter extends PersonConversionAgent<Person[]> {
     }
 
     public ArrayConverter(int collectionSize) {
-        this(PersonFactory.createPersonArray(collectionSize));
+        this(new PersonFactory().createPersonArray(collectionSize));
         /** Implementation of adapter pattern for testing purposes
          *  @param collectionSize  - length of Array to be generated */
     }
