@@ -19,7 +19,7 @@ import java.util.stream.Stream;
  */
 public final class PersonWarehouse implements Iterable<Person> {
     private final LoggerHandler loggerHandler = LoggerWarehouse.getLogger(PersonWarehouse.class);
-    private final ArrayList<Person> people = new ArrayList<>();
+    private final List<Person> people = new ArrayList<>();
 
     /**
      * @param person the Person object to add to the warehouse
@@ -31,6 +31,14 @@ public final class PersonWarehouse implements Iterable<Person> {
         loggerHandler.info(ReflectionUtils.getFieldMap(person).toString());
         people.add(person);
     }
+
+    /**
+     * @return list of names of Person objects
+     */ // TODO
+    public List<String> getNames() {
+        return null;
+    }
+
 
     /**
      * @return list of uniquely named Person objects
@@ -76,13 +84,6 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return Stream of all Aliases
      */ // TODO
     public Stream<String> getAllAliases() {
-        return null;
-    }
-
-    /**
-     * @return list of names of Person objects
-     */ // TODO
-    public List<String> getNames() {
         return null;
     }
 

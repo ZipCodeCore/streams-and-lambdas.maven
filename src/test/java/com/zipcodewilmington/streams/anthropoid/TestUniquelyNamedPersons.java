@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author leon on 08/10/2018.
@@ -21,8 +22,9 @@ public class TestUniquelyNamedPersons {
         this.factory = new PersonFactory();
         this.warehouse = new PersonWarehouse();
 
-        factory
-                .createPersonList(9999)
+        Stream
+                .generate(factory::createRandomPerson)
+                .limit(9999)
                 .forEach(warehouse::addPerson);
     }
 

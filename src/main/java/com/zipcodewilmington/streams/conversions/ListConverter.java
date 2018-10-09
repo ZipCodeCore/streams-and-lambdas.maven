@@ -4,6 +4,7 @@ import com.zipcodewilmington.streams.anthropoid.Person;
 import com.zipcodewilmington.streams.anthropoid.PersonFactory;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -15,9 +16,10 @@ public final class ListConverter extends PersonConversionAgent<List<Person>> {
     }
 
     public ListConverter(int collectionSize) {
-        this(new PersonFactory().createPersonList(collectionSize));
-        /** Implementation of adapter pattern for testing purposes
-         *  @param collectionSize  - size of List to be generated */
+        this(Stream
+                .generate(new PersonFactory()::createRandomPerson)
+                .limit(collectionSize)
+                .collect(Collectors.toList()));
     }
 
     @Override

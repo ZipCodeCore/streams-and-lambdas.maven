@@ -14,9 +14,9 @@ import java.util.Date;
  */
 public class Person implements Comparable<Person> {
     private String name;
-    private int age;
-    private boolean isMale;
-    private long personalId;
+    private Integer age;
+    private Boolean isMale;
+    private Long personalId;
     private Date birthDate;
     private String[] aliases;
 
