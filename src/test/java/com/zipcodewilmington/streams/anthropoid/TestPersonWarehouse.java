@@ -76,4 +76,10 @@ public class TestPersonWarehouse {
 
         Assert.assertEquals(localNames.toString(), warehouseNames.toString());
     }
+
+    @Test
+    public void testCheckUniqueName() {
+        warehouse.addPerson(new Person("Johny", true, 23L, new Date(), new String[0]));
+        Assert.assertTrue(this.warehouse.checkUniqueName("Johny"));
+    }
 }

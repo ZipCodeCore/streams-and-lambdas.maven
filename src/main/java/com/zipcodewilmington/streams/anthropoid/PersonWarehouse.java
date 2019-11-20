@@ -4,10 +4,8 @@ import com.zipcodewilmington.streams.tools.ReflectionUtils;
 import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -36,15 +34,25 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return list of names of Person objects
      */ // TODO
     public List<String> getNames() {
-        return null;
+        return people.stream().map(Person::getName).collect(Collectors.toList());
     }
 
 
     /**
      * @return list of uniquely named Person objects
+     * this method is not looking for unique names, but rather the first occurrence of each name
      */ //TODO
     public Stream<Person> getUniquelyNamedPeople() {
-        return null;
+        return people.stream()
+                .collect(Collectors.groupingBy(Person::getName))
+                .values()
+                .stream()
+                .map(p -> p.get(0));
+//                .sorted(Collections.reverseOrder());
+    }
+
+    public Boolean checkUniqueName(String name) {
+        return getNames().stream().filter(n -> n.equals(name)).count() == Long.valueOf(1);
     }
 
 
@@ -53,7 +61,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+        return getUniquelyNamedPeople().filter(person -> person.getName().charAt(0) == character);
     }
 
     /**
@@ -61,7 +69,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return people.stream().filter(person -> checkUniqueName(person.getName())).limit(n);
     }
 
     /**
