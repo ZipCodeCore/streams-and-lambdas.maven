@@ -4,10 +4,11 @@ import com.zipcodewilmington.streams.tools.ReflectionUtils;
 import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -36,15 +37,32 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return list of names of Person objects
      */ // TODO
     public List<String> getNames() {
-        return null;
+
+       return people.stream().map(Person::getName).collect(Collectors.toList());
+
     }
 
 
     /**
      * @return list of uniquely named Person objects
      */ //TODO
-    public Stream<Person> getUniquelyNamedPeople() {
-        return null;
+    public Stream <Person> getUniquelyNamedPeople() {
+        Set<String> mySet = new HashSet<>((people.size()));
+
+        return people.stream().filter(p -> mySet.add(p.getName()));
+
+//        uniqueNames =  people.stream().collect(Collectors.map(Person, getNames())
+//                .entrySet()
+//                .stream()
+//                .filter(entry -> entry.getValue() == 1)
+//                .map(Map.Entry::getKey);
+////                .collect(Collectors.toList());
+//
+       //return  people.stream().map(e -> e.getName());
+//
+//stream.of(linked)
+//        return uniqueNames;
+//        return null;
     }
 
 
@@ -53,7 +71,17 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+        return people.stream().filter(thePerson -> (thePerson.getName().indexOf(character) == 0));
+
+//        String myChar = String.valueOf(character);
+//        Predicate<String> predicate = new Predicate <String> (){
+//
+//            @Override
+//            public boolean test(String o) {
+//               return (o.startsWith(myChar));
+//            }
+//        };
+        //people.stream().filter(predicate::apply);
     }
 
     /**
@@ -61,22 +89,33 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return getUniquelyNamedPeople().limit(n);
     }
+
+   //
+    // uniqueNames =  people.stream().collect(Collectors.map(Person, getNames())
+//                .entrySet()
+//                .stream()
+//                .filter(entry -> entry.getValue() == 1)
+//                .map(Map.Entry::getKey);
+////                .collect(Collectors.toList());
+//
 
     /**
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public Map<Long, String> getIdToNameMap() {
-        return null;
+       return people.stream().collect(Collectors.toMap(Person::getPersonalId, Person::getName));
     }
 
 
     /**
      * @return Stream of Stream of Aliases
      */ // TODO
-    public Stream<Stream<String>> getNestedAliases() {
-        return null;
+    public Stream<Stream<String>> getNestedAliases()
+    {
+       return people.stream().map(x -> Stream.of(x.getAliases()));
+
     }
 
 
@@ -84,7 +123,8 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return Stream of all Aliases
      */ // TODO
     public Stream<String> getAllAliases() {
-        return null;
+        return getNestedAliases().flatMap(Function.identity());
+        //or inside flatMap( v -> v)
     }
 
     // DO NOT MODIFY
@@ -106,4 +146,10 @@ public final class PersonWarehouse implements Iterable<Person> {
     public Iterator<Person> iterator() {
         return people.iterator();
     }
+
+    public static <T> Predicate <T> distinctByKey (Function <? super T, Object > keyExtractor) {
+        Map<Object, Boolean> map = new ConcurrentHashMap<>();
+        return t -> map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE == null);
+    }
+
 }
