@@ -39,6 +39,7 @@ public class TestUniquelyNamedPersons {
 
         // then
         List<String> expectedList = this.deriveUniqueNames(warehouse);
+        System.out.println( warehouse.getNestedAliases());
         Assert.assertEquals(expectedList.toString(), actualList.toString());
     }
 
