@@ -21,7 +21,7 @@ public final class PersonFactory {
     /**
      * @return a new instance of a person with fields of random values
      */
-    public Person createRandomPerson() {
+    public static Person createRandomPerson() {
         String name = StringUtils.capitalizeFirstChar(RandomUtils.createString('a', 'e', 3));
         String[] aliases = RandomUtils.createStrings('a', 'z', 3, 5);
         boolean isMale = RandomUtils.createBoolean(50);
@@ -38,8 +38,8 @@ public final class PersonFactory {
      * @param listSize - number of Person objects to create
      * @return - ArrayList of Person objects
      */ // TODO
-    public List<Person> createPersonList(int listSize) {
-        return null;
+    public static List<Person> createPersonList(int listSize) {
+        return createPersonStream(listSize).collect(Collectors.toList());
     }
 
 
@@ -47,8 +47,8 @@ public final class PersonFactory {
      * @param arrayLength - number of Person objects to create
      * @return - Array of Person objects
      */ // TODO
-    public Person[] createPersonArray(int arrayLength) {
-        return null;
+    public static Person[] createPersonArray(int arrayLength) {
+        return createPersonStream(arrayLength).toArray(Person[]::new);
     }
 
 
@@ -58,7 +58,7 @@ public final class PersonFactory {
      * @param streamCount - number of Person objects to create
      * @return - Stream representation of collection of Person objects
      */ // TODO
-    public Stream<Person> createPersonStream(int streamCount) {
-        return null;
+    public static Stream<Person> createPersonStream(int streamCount) {
+        return Stream.generate(PersonFactory::createRandomPerson).limit(streamCount);
     }
 }
