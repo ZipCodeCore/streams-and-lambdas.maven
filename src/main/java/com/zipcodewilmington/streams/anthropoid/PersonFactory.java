@@ -46,8 +46,7 @@ public final class PersonFactory {
     public List<Person> createPersonList(int listSize) {
         List<Person> personList = new ArrayList<>();
         for(int i = 0; i < listSize; i++){
-            Person person = createRandomPerson();
-            personList.add(person);
+            personList.add(createRandomPerson());
         }
         return personList;
     }
@@ -60,8 +59,7 @@ public final class PersonFactory {
     public Person[] createPersonArray(int arrayLength) {
         Person[] personArray = new Person[arrayLength];
         for(int i = 0; i < arrayLength; i++){
-            Person person = createRandomPerson();
-            personArray[i] = person;
+            personArray[i] = createRandomPerson();
         }
         return personArray;
     }
