@@ -36,7 +36,11 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return list of names of Person objects
      */ // TODO
     public List<String> getNames() {
-        return null;
+        List<String> names = new ArrayList<>();
+
+        people.stream().forEach(person -> names.add(person.getName()));
+
+        return names;
     }
 
 
@@ -86,6 +90,10 @@ public final class PersonWarehouse implements Iterable<Person> {
     public Stream<String> getAllAliases() {
         return null;
     }
+
+
+
+
 
     // DO NOT MODIFY
     public Boolean contains(Person p) {
