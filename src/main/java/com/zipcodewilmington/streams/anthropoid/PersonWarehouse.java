@@ -5,6 +5,10 @@ import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -33,9 +37,9 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return list of names of Person objects
      */
     public List<String> getNames() {
-        List<String> names = new ArrayList<>();
-
-        people.stream().forEach(person -> names.add(person.getName()));
+        List<String> names = people.stream()
+                .map(person -> person.getName()) // apply the function to each element in a stream
+                .collect(Collectors.toList());
 
         return names;
     }
@@ -43,17 +47,21 @@ public final class PersonWarehouse implements Iterable<Person> {
 
     /**
      * @return list of uniquely named Person objects
-     */ //TODO
+     */
     public Stream<Person> getUniquelyNamedPeople() {
-        List<Person> uniquelyNamedPeople = new ArrayList<>();
 
-        uniquelyNamedPeople = people.stream()
-                .distinct()
+        List<Person> uniquelyNamedPeople = people.stream()
+                .filter(distinctByName(Person::getName))
                 .collect(Collectors.toList());
 
         return uniquelyNamedPeople.stream();
     }
 
+    public static <Person> Predicate<Person> distinctByName(Function<? super Person, ?> keyExtractor) {
+        Set<Object> result = ConcurrentHashMap.newKeySet();
+        return Person -> result.add(keyExtractor.apply(Person));
+
+    }
 
     /**
      * @param character starting character of Person objects' name
