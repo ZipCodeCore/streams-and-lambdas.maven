@@ -1,11 +1,12 @@
 package com.zipcodewilmington.streams.anthropoid;
 
+import com.sun.codemodel.internal.JForEach;
 import com.zipcodewilmington.streams.tools.RandomUtils;
 import com.zipcodewilmington.streams.tools.StringUtils;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -39,16 +40,27 @@ public final class PersonFactory {
      * @return - ArrayList of Person objects
      */ // TODO
     public List<Person> createPersonList(int listSize) {
-        return null;
-    }
+      /*  ArrayList<Person> personList = new ArrayList<>(listSize);
+        for (int i = 0; i < listSize; i++) {
+            personList.add(createRandomPerson());
+        }
 
+
+        return personList;*/
+        return Stream.generate(this::createRandomPerson).limit(listSize).collect(Collectors.toList());
+    }
 
     /**
      * @param arrayLength - number of Person objects to create
      * @return - Array of Person objects
      */ // TODO
     public Person[] createPersonArray(int arrayLength) {
-        return null;
+      /*  Person[] personArray = new Person[arrayLength];
+        for (int i = 0; i < arrayLength; i++) {
+            personArray[i] = createRandomPerson();
+        }
+        return personArray;*/
+        return Stream.generate(this::createRandomPerson).limit(arrayLength).toArray(Person[]::new);
     }
 
 
@@ -59,6 +71,9 @@ public final class PersonFactory {
      * @return - Stream representation of collection of Person objects
      */ // TODO
     public Stream<Person> createPersonStream(int streamCount) {
-        return null;
+       // Stream<Person> personStream = Arrays.stream(createPersonArray(streamCount));
+       // return personStream;
+        //Another method
+        return Stream.generate(this::createRandomPerson).limit(streamCount);
     }
 }
