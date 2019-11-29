@@ -81,7 +81,13 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        Stream<Person> uniquePeople = getUniquelyNamedPeople();
+
+        List<Person> firstUnique = uniquePeople.collect(Collectors.toList()).stream()
+                .limit(n)
+                .collect(Collectors.toList());
+
+        return firstUnique.stream();
     }
 
     /**
