@@ -4,6 +4,7 @@ import com.zipcodewilmington.streams.tools.ReflectionUtils;
 import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
+import javax.imageio.plugins.jpeg.JPEGImageReadParam;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
@@ -66,9 +67,13 @@ public final class PersonWarehouse implements Iterable<Person> {
     /**
      * @param character starting character of Person objects' name
      * @return a Stream of respective
-     */ //TODO
+     */
     public Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+        List<Person> uniqueNames =  people.stream()
+                .filter(person -> person.getName().startsWith(character.toString()))
+                .collect(Collectors.toList());
+
+        return uniqueNames.stream();
     }
 
     /**
