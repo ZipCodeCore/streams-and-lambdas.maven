@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 /**
  * Created by leon on 5/25/17.
  */
+
 public final class StreamConverter extends PersonConversionAgent<Stream<Person>> {
     private final List<Person> personList;
     public StreamConverter(Stream<Person> people) {
@@ -25,16 +26,21 @@ public final class StreamConverter extends PersonConversionAgent<Stream<Person>>
 
     // TODO
     public List<Person> toList() {
-        return null;
+
+        //return super.objectSequence.collect(Collectors.toList());
+        return  personList;
     }
 
     // TODO
     public Stream<Person> toStream() {
-        return null;
+
+        //return super.objectSequence;
+      return  personList.stream();
     }
 
     // TODO
     public Person[] toArray() {
-        return null;
+
+        return personList.toArray(new Person[0]);
     }
 }
