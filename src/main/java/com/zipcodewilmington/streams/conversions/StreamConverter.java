@@ -18,23 +18,24 @@ public final class StreamConverter extends PersonConversionAgent<Stream<Person>>
     }
 
     public StreamConverter(int collectionSize) {
-        this(Stream
-                .generate(new PersonFactory()::createRandomPerson)
-                .limit(collectionSize));
+        this(PersonFactory.createPersonStream(collectionSize));
+//        this(Stream
+//                .generate(new PersonFactory()::createRandomPerson)
+//                .limit(collectionSize));
     }
 
     // TODO
     public List<Person> toList() {
-        return null;
+        return personList;
     }
 
     // TODO
     public Stream<Person> toStream() {
-        return null;
+        return personList.stream();
     }
 
     // TODO
     public Person[] toArray() {
-        return null;
+        return toStream().toArray(Person[]::new);
     }
 }
