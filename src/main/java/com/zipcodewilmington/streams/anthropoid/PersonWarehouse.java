@@ -107,10 +107,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return Stream of Stream of Aliases
      */ // TODO
     public Stream<Stream<String>> getNestedAliases() {
-        Stream<Stream<String>> nestedAliases = people
-                .stream()
-                .map(val -> Arrays.stream(val.getAliases()));
-        return nestedAliases;
+        return Stream.of(getAllAliases());
     }
 
 
@@ -121,7 +118,6 @@ public final class PersonWarehouse implements Iterable<Person> {
         Stream<String> allAliases = people
                 .stream()
                 .flatMap(val -> Arrays.stream(val.getAliases()));
-
         return allAliases;
     }
 
