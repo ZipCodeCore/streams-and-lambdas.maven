@@ -54,6 +54,7 @@ public final class PersonWarehouse implements Iterable<Person> {
                 .forEach(person ->{
                     if(namesList.contains(person.getName())){
                         uniquelyNamePeople.add(person);
+                        namesList.remove(person.getName());
                     }
                 });
         Stream<Person> resultStream = uniquelyNamePeople.stream();
@@ -66,7 +67,8 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-        return null;
+        // maybe this work?
+        return getUniquelyNamedPeople().filter(x -> x.getName().charAt(0) == character);
     }
 
     /**
@@ -74,14 +76,15 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return getUniquelyNamedPeople().limit(n);
     }
 
     /**
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public Map<Long, String> getIdToNameMap() {
-        return null;
+        return people.stream()
+                .collect(Collectors.toMap(Person::getPersonalId, Person::getName));
     }
 
 
@@ -89,7 +92,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return Stream of Stream of Aliases
      */ // TODO
     public Stream<Stream<String>> getNestedAliases() {
-        return null;
+        return Stream.of(getAllAliases());
     }
 
 
@@ -97,12 +100,9 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return Stream of all Aliases
      */ // TODO
     public Stream<String> getAllAliases() {
-        Stream<String> jawn = (Stream<String>) people.stream()
-                .map(Person::getAliases)
-                .collect(Collectors.toList());
-//        Stream<String> jawne= Stream.of(people)
-//                .map(Person::getAliases)
-       return jawn;
+        return people.stream()
+                .flatMap(p -> Arrays.stream(p.getAliases()))
+                .collect(Collectors.toList()).stream();
     }
 
     // DO NOT MODIFY
