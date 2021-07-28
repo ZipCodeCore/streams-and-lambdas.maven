@@ -95,9 +95,9 @@ public final class PersonWarehouse implements Iterable<Person> {
      */ // TODO - done
     public Stream<String> getAllAliases() {
         return people.stream()
-                .flatMap(person -> Arrays.stream(person.getAliases()))
-                .collect(Collectors.toList())
-                .stream();
+                .flatMap(person -> Arrays.stream(person.getAliases()));
+//                .collect(Collectors.toList())
+//                .stream();
     }
 
     // DO NOT MODIFY

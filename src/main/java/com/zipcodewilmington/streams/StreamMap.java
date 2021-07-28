@@ -1,5 +1,7 @@
 package com.zipcodewilmington.streams;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -20,7 +22,9 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO - done
     public static Stream<Stream<String>> wordsMap(String... someWords) {
-        return Stream.of(wordsFlatMap(someWords));
+        return Stream.of(someWords).map(word -> letters(word));
+        //return Stream.of(wordsFlatMap(someWords));
+
     }
 
     /**
@@ -28,6 +32,9 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO - done
     public static Stream<String> wordsFlatMap(String... stringArray) {
-        return Stream.of(stringArray);
+        //return Stream.of(stringArray);
+        Stream<String> wordStream = Stream.of(stringArray);
+        List<String> wordList = wordStream.collect(Collectors.toList());
+        return wordList.stream().flatMap(w -> letters(w));
     }
 }
