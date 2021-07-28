@@ -5,6 +5,7 @@ import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -45,6 +46,13 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return list of uniquely named Person objects
      */ //TODO
     public Stream<Person> getUniquelyNamedPeople() {
+//        List<String> names = getNames().stream().distinct().collect(Collectors.toList());
+//        Predicate<Person> matchNames = val -> names.contains(val.getName());
+//        Stream<Person> uniquePersons = people
+//                .stream()
+//                .filter(matchNames);
+//        return uniquePersons;
+
         //google distinct
         List<String> namesList = getNames()
             .stream()
@@ -59,8 +67,8 @@ public final class PersonWarehouse implements Iterable<Person> {
                             namesList.remove(person.getName());
                         }
                 });
-        Stream<Person> resultStream = uniquelyNamedPeople.stream();
-        return resultStream;
+        Stream<Person> result = uniquelyNamedPeople.stream();
+        return result;
     }
 
 
@@ -88,7 +96,8 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public Map<Long, String> getIdToNameMap() {
-        Map<Long, String> idToNameMap = people.stream()
+        Map<Long, String> idToNameMap = people
+                .stream()
                 .collect(Collectors.toMap(Person::getPersonalId, Person::getName));
         return idToNameMap;
     }
@@ -98,8 +107,10 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return Stream of Stream of Aliases
      */ // TODO
     public Stream<Stream<String>> getNestedAliases() {
-
-        return null;
+        Stream<Stream<String>> nestedAliases = people
+                .stream()
+                .map(val -> Arrays.stream(val.getAliases()));
+        return nestedAliases;
     }
 
 
@@ -107,8 +118,11 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return Stream of all Aliases
      */ // TODO
     public Stream<String> getAllAliases() {
+        Stream<String> allAliases = people
+                .stream()
+                .flatMap(val -> Arrays.stream(val.getAliases()));
 
-        return null;
+        return allAliases;
     }
 
     // DO NOT MODIFY
