@@ -101,8 +101,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      */ // TODO
     public Stream<String> getAllAliases() {
         return people.stream()
-                .flatMap(p -> Arrays.stream(p.getAliases()))
-                .collect(Collectors.toList()).stream();
+                .flatMap(p -> Arrays.stream(p.getAliases()));
     }
 
     // DO NOT MODIFY
