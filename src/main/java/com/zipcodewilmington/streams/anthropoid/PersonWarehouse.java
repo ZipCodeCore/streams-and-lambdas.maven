@@ -36,7 +36,9 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return list of names of Person objects
      */ // TODO
     public List<String> getNames() {
-        return null;
+        return people.stream()
+                .map(Person::getName)
+                .collect(Collectors.toList());
     }
 
 
@@ -44,6 +46,8 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return list of uniquely named Person objects
      */ //TODO
     public Stream<Person> getUniquelyNamedPeople() {
+        List<Person> personList = people.stream()
+                .collect(Collectors.groupingBy();
         return null;
     }
 
