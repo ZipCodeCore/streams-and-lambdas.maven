@@ -5,6 +5,7 @@ import com.zipcodewilmington.streams.tools.logging.LoggerHandler;
 import com.zipcodewilmington.streams.tools.logging.LoggerWarehouse;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -41,8 +42,8 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return list of uniquely named Person objects
      */ //TODO
     public Stream<Person> getUniquelyNamedPeople() {
-       // return people.stream().distinct();
-     return null;
+        Set<String> set=new HashSet<>();
+        return people.stream().filter(p -> set.add(p.getName()));
     }
 
 
@@ -51,8 +52,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getUniquelyNamedPeopleStartingWith(Character character) {
-
-return null;
+        return getUniquelyNamedPeople().filter(person -> person.getName().startsWith(character.toString()));
     }
 
     /**
@@ -60,14 +60,17 @@ return null;
      * @return a Stream of respective
      */ //TODO
     public Stream<Person> getFirstNUniquelyNamedPeople(int n) {
-        return null;
+        return getUniquelyNamedPeople().limit(n);
+
     }
 
     /**
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public Map<Long, String> getIdToNameMap() {
-        return null;
+       // Map<Long,String> map = new HashMap<>();
+        //people.stream().map(person -> map.put(person.getPersonalId(),person.getName()));
+        return people.stream().collect(Collectors.toMap(Person::getPersonalId, Person::getName));
     }
 
 
@@ -75,7 +78,7 @@ return null;
      * @return Stream of Stream of Aliases
      */ // TODO
     public Stream<Stream<String>> getNestedAliases() {
-        return null;
+        return people.stream().map(x -> Arrays.stream(x.getAliases()));
     }
 
 
@@ -83,7 +86,7 @@ return null;
      * @return Stream of all Aliases
      */ // TODO
     public Stream<String> getAllAliases() {
-        return null;
+        return people.stream().flatMap(x -> Arrays.stream(x.getAliases()));
     }
 
     // DO NOT MODIFY

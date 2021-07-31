@@ -50,7 +50,8 @@ public final class PersonFactory {
      * @return - Array of Person objects
      */ // TODO
     public Person[] createPersonArray(int arrayLength) {
-       return createPersonList(arrayLength).toArray(new Person[0]);
+
+        return createPersonList(arrayLength).toArray(new Person[0]);
     }
 
 
