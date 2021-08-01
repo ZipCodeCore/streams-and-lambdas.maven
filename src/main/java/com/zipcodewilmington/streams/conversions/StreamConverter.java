@@ -25,23 +25,30 @@ public final class StreamConverter extends PersonConversionAgent<Stream<Person>>
 
     // TODO
     public List<Person> toList() {
-        List<Person> po = personList;
-
-        return po;
+        return personList;
     }
+//        List<Person> po = personList;
+//
+//        return po;
+//    }
 
     // TODO
     public Stream<Person> toStream() {
-        Stream<Person> po = personList
-                .stream();
-        return po;
+        return personList.stream();
     }
+//        Stream<Person> po = personList
+//                .stream();
+//        return po;
+//    }
 
     // TODO
     public Person[] toArray() {
-       Person[] po = personList
-               .stream()
-               .toArray(Person[]::new);
-       return po;
+
+        return personList.toArray(new Person[0]);
     }
+//       Person[] po = personList
+//               .stream()
+//               .toArray(Person[]::new);
+//       return po;
+//    }
 }
