@@ -3,9 +3,11 @@ package com.zipcodewilmington.streams.anthropoid;
 import com.zipcodewilmington.streams.tools.RandomUtils;
 import com.zipcodewilmington.streams.tools.StringUtils;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -38,8 +40,26 @@ public final class PersonFactory {
      * @param listSize - number of Person objects to create
      * @return - ArrayList of Person objects
      */ // TODO
+//    public List<Person> createPersonList(int listSize, List<Person> lp) {
+//        System.out.println("INSIDE FUNCTION AT: " + listSize);
+//        Person myPerson = createRandomPerson();
+//
+//        if(listSize == 0) {
+//            return lp;
+//        }
+//
+//        lp.add(myPerson);
+//
+//        return createPersonList(listSize-1, lp);
+//    }
+
     public List<Person> createPersonList(int listSize) {
-        return null;
+        List<Person> personList = new ArrayList<>();
+        IntStream.range(0, listSize)
+                .forEach(x -> {
+                    personList.add(this.createRandomPerson());
+                });
+        return personList;
     }
 
 
@@ -48,7 +68,12 @@ public final class PersonFactory {
      * @return - Array of Person objects
      */ // TODO
     public Person[] createPersonArray(int arrayLength) {
-        return null;
+        Person[] taco = new Person[arrayLength];
+        IntStream.range(0, arrayLength)
+                .forEach(x -> {
+                    taco[x] = this.createRandomPerson();
+                });
+        return taco;
     }
 
 
@@ -59,6 +84,8 @@ public final class PersonFactory {
      * @return - Stream representation of collection of Person objects
      */ // TODO
     public Stream<Person> createPersonStream(int streamCount) {
-        return null;
+        List<Person> list = this.createPersonList(streamCount);
+        System.out.println(list.stream());
+        return list.stream();
     }
 }
