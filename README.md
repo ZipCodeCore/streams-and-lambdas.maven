@@ -1,4 +1,5 @@
-# ZCW-MicroLabs-Streams-And-Lambdas:<br>The Person Factory
+# Streams-And-Lambdas: The Person Factory
+
 * **Purpose** - to demonstrate stream usage.
 
 ## Part 1
