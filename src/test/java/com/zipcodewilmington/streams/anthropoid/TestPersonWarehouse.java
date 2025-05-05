@@ -76,4 +76,25 @@ public class TestPersonWarehouse {
 
         Assert.assertEquals(localNames.toString(), warehouseNames.toString());
     }
+
+    @Test
+    public void testCheckUniqueName() {
+        warehouse.addPerson(new Person("Johny", true, 23L, new Date(), new String[0]));
+        Assert.assertTrue(this.warehouse.checkUniqueName("Johny"));
+    }
+
+    @Test
+    public void testGetNestedAliases() {
+        ArrayList<String> actual = new ArrayList<>();
+        for (Stream<String> streamer : warehouse.getNestedAliases().collect(Collectors.toList())) {
+            actual.addAll(streamer.collect(Collectors.toList()));
+        }
+        Assert.assertEquals(49995, actual.size());
+    }
+
+//    @Test
+//    public void testGetAllAliases() {
+//        ArrayList<String> actual = warehouse.getAllAliases().collect(Collectors.toList());
+//        Assert.assertEquals(49995, actual.size());
+//    }
 }
