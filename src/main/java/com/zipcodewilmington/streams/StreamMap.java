@@ -18,7 +18,10 @@ public class StreamMap {
      * @return - a Stream of single characters
      */ //TODO
     public static Stream<String> letters(String someWord) {
-        return null;
+        Stream<String> lettersList = someWord
+                .codePoints()
+                .mapToObj(c -> String.valueOf(c));
+        return lettersList;
     }
 
     /**
@@ -26,7 +29,9 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO
     public static Stream<Stream<String>> wordsMap(String... someWords) {
-        return null;
+        Stream<Stream<String>> wordsMapStream = Arrays.stream(someWords)
+                .map(word -> letters(word));
+        return wordsMapStream;
     }
 
     /**
@@ -34,6 +39,8 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO
     public static Stream<String> wordsFlatMap(String... stringArray) {
-        return null;
+        Stream<String> wordsFlatMapStream = Arrays.stream(stringArray)
+                .flatMap(word -> letters(word));
+        return wordsFlatMapStream;
     }
 }
