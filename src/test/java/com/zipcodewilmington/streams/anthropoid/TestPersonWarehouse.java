@@ -73,7 +73,6 @@ public class TestPersonWarehouse {
         for (Person person : warehouse) {
             localNames.add(person.getName());
         }
-
         Assert.assertEquals(localNames.toString(), warehouseNames.toString());
     }
 }
