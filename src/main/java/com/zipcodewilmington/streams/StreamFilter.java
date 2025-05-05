@@ -20,23 +20,28 @@ public class StreamFilter {
      * No arg constructor
      */ //TODO - construct person stream of 100 person objects; startingCharacter is a random capital letter
     public StreamFilter() {
-        this(Stream.empty(), null);
+        this.personStream = new PersonFactory().createPersonStream(100);
+        this.startingCharacter = RandomUtils.createCharacter('A','Z').toString();
     }
 
     /**
      * @param people - Array of person objects
      * @param startingCharacter - character to filter by
-     */ //TODO
+     */
     public StreamFilter(Person[] people, Character startingCharacter) {
-        this(Stream.empty(), null);
+
+        this.personStream = Stream.of(people);
+        this.startingCharacter = startingCharacter.toString();
     }
 
     /**
      * @param people - List of person objects
      * @param startingCharacter - character to filter by
-     */ //TODO
+     */
     public StreamFilter(List<Person> people, Character startingCharacter) {
-        this(Stream.empty(), null);
+
+        this.personStream = people.stream();
+        this.startingCharacter = startingCharacter.toString();
     }
 
 
@@ -53,36 +58,46 @@ public class StreamFilter {
     /**
      * Using multi-line lambda syntax
      * @return a list of person object whose name starts with `this.startingCharacter`
-     */ //TODO
+     */
     public List<Person> toListMultiLine() {
-        return null;
+
+        return this.personStream
+                .filter(person -> person.getName()
+                .startsWith(this.startingCharacter))
+                .collect(Collectors.toList());
     }
 
 
     /**
      * Using one-line lambda syntax
      * @return a list of person objects whose name starts with `this.startingCharacter`
-     */ //TODO
+     */
     public List<Person> toListOneLine() {
-        return null;
+
+        return toListMultiLine();
     }
 
 
     /**
      * Using one-line lambda syntax
      * @return an array of person object whose name starts with `this.startingCharacter`
-     */ //TODO
+     */
     public Person[] toArrayOneLine() {
-        return null;
+
+        return toArrayMultiLine();
     }
 
 
     /**
      * Using multi-line lambda syntax
      * @return an array of person object whose name starts with `this.startingCharacter`
-     */ //TODO
+     */
     public Person[] toArrayMultiLine() {
-        return null;
+
+        return this.personStream
+                .filter(person -> person.getName()
+                .startsWith(this.startingCharacter))
+                .toArray(Person[]::new);
     }
 
 }
