@@ -5,7 +5,9 @@ import com.zipcodewilmington.streams.anthropoid.PersonFactory;
 import com.zipcodewilmington.streams.tools.RandomUtils;
 import com.zipcodewilmington.streams.tools.StringUtils;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,7 +22,11 @@ public class StreamFilter {
      * No arg constructor
      */ //TODO - construct person stream of 100 person objects; startingCharacter is a random capital letter
     public StreamFilter() {
-        this(Stream.empty(), null);
+
+        //ONLY CAN HAVE STATIC METHODS CALLED IN THE CONSTRUCTOR because it creates the object.  We can't use the
+        //methods in the class because we don't yet have an object to call them.
+
+        this(new PersonFactory().createPersonStream(100), RandomUtils.createCharacter('A', 'Z'));
     }
 
     /**
@@ -28,7 +34,11 @@ public class StreamFilter {
      * @param startingCharacter - character to filter by
      */ //TODO
     public StreamFilter(Person[] people, Character startingCharacter) {
-        this(Stream.empty(), null);
+
+        //if we have "this ( Stream.empty(), startingCharacter null)" with parenthesis, we're calling another constructor specifically going to call the
+        //constructor that has those two parameters,
+
+        this(Arrays.stream(people), startingCharacter);
     }
 
     /**
@@ -36,7 +46,8 @@ public class StreamFilter {
      * @param startingCharacter - character to filter by
      */ //TODO
     public StreamFilter(List<Person> people, Character startingCharacter) {
-        this(Stream.empty(), null);
+
+        this(people.stream(), startingCharacter);
     }
 
 
@@ -55,7 +66,10 @@ public class StreamFilter {
      * @return a list of person object whose name starts with `this.startingCharacter`
      */ //TODO
     public List<Person> toListMultiLine() {
-        return null;
+        return personStream.filter(x -> {
+            boolean b = x.getName().matches(this.startingCharacter);
+            return b;
+        }).collect(Collectors.toList());
     }
 
 
@@ -64,7 +78,9 @@ public class StreamFilter {
      * @return a list of person objects whose name starts with `this.startingCharacter`
      */ //TODO
     public List<Person> toListOneLine() {
-        return null;
+        return personStream.filter(x -> x.getName()
+                .matches(this.startingCharacter))
+                .collect(Collectors.toList());
     }
 
 
@@ -73,7 +89,8 @@ public class StreamFilter {
      * @return an array of person object whose name starts with `this.startingCharacter`
      */ //TODO
     public Person[] toArrayOneLine() {
-        return null;
+        return personStream.filter(x -> x.getName().matches(this.startingCharacter))
+                .toArray(Person[]::new);
     }
 
 
@@ -82,7 +99,21 @@ public class StreamFilter {
      * @return an array of person object whose name starts with `this.startingCharacter`
      */ //TODO
     public Person[] toArrayMultiLine() {
-        return null;
+        return personStream.filter(x -> x.getName().matches(this.startingCharacter))
+                .toArray(Person[]::new);
+    }
+
+    public Character createRandomLetter () {
+//        Random rnd = new Random();
+//        char c = (char) (rnd.nextInt(26) + 'a');
+
+//        Stream.generate(Math::random)
+//                .limit(limitTerms)
+
+        String chars = "abcdefghijklmnopqrstuvxyz";
+        Random rnd = new Random();
+        char c = chars.charAt(rnd.nextInt(chars.length()));
+        return c;
     }
 
 }

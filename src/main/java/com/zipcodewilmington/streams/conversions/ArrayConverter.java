@@ -12,6 +12,8 @@ import java.util.stream.Stream;
  * Created by leon on 5/25/17.
  */
 public final class ArrayConverter extends PersonConversionAgent<Person[]> {
+    Person [] people;
+
     public ArrayConverter(Person... people) {
         super(people);
     }
@@ -25,12 +27,15 @@ public final class ArrayConverter extends PersonConversionAgent<Person[]> {
 
     //TODO
     public List<Person> toList() {
-        return null;
+
+        return Arrays.asList(super.objectSequence);
+
     }
 
     //TODO
     public Stream<Person> toStream() {
-        return null;
+
+        return Arrays.stream(objectSequence);
     }
 
     @Override
